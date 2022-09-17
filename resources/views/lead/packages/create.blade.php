@@ -43,6 +43,13 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
 
+                            <div class="col-sm-6 mb-3">
+                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Flights in Label</span></label>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2 d-flex align-items-center"><input class="mx-1" type="radio" name="travel" id="travel1"><label for="travel1" class="mb-0">Nedded</label></div>
+                                    <div class=" d-flex align-items-center"><input checked="checked" class="mx-1"  type="radio" name="travel" id="travel2"><label for="travel2" class="mb-0">Not nedded</label></div>
+                                </div>
+                            </div>
 
                         <div class="row clearfix">
                             <div class="col-sm-6">
@@ -70,7 +77,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="from"><span class="red ml-3">*</span> <span>From</span></label>
@@ -108,7 +115,7 @@
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -174,7 +181,7 @@
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Nights</span></label>

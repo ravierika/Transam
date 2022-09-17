@@ -9,9 +9,9 @@
                 <h2>Leads
                 <small>Welcome to {{$compn}}</small>
                 </h2>
-            </div>            
+            </div>
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
-                
+
                 <a href="" class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3 delete-all" data-url="">
                     <i class="zmdi zmdi-minus mt-2"></i>
                 </a>
@@ -33,22 +33,29 @@
                         <h2><strong>{{$compn}}</strong> Leads </h2>
                     </div>
                     <div class="body">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <table class="table-responsive table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="check_all"></th>
-                                    <th>User ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
-                                    <th>Company ID</th>
-                                    <th>Role</th>                                        
-                                    <th>Deal</th>
-                                    <th>Value</th>
+                                    <th>Trip Type</th>
+                                    <th>Client Name</th>
+                                    <th>User</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Depart Date</th>
+                                    <th>Return Date</th>
+                                    <th>Number of Adults</th>
+                                    <th>Number of Kids</th>
+                                    <th>Number of Infants</th>
+                                    <th>Flight Class</th>
+                                    <th>Preference</th>
+                                    <th>Lead Status</th>
+                                    <th>Remarks</th>
                                 </tr>
                             </thead>
+                            {{-- need to change tbody laravel code --}}
                             <tbody>
-                                @foreach($users as $user)  
+                                @foreach($users as $user)
                                 <tr id="tr_{{$user->id}}">
                                     <td><input type="checkbox" class="checkbox" data-id="{{$user->id}}"></td>
                                     <td>{{$user->userid}}</td>
@@ -62,14 +69,14 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                               
-                            
+
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Exportable Table --> 
+        <!-- #END# Exportable Table -->
     </div>
     </div>
 </section>
@@ -85,12 +92,12 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('#check_all').on('click', function(e) {
-         if($(this).is(':checked',true))  
+         if($(this).is(':checked',true))
          {
-            $(".checkbox").prop('checked', true);  
-         } else {  
-            $(".checkbox").prop('checked',false);  
-         }  
+            $(".checkbox").prop('checked', true);
+         } else {
+            $(".checkbox").prop('checked',false);
+         }
         });
          $('.checkbox').on('click',function(){
             if($('.checkbox:checked').length == $('.checkbox').length){
@@ -100,16 +107,16 @@
             }
          });
         $('.delete-all').on('click', function(e) {
-            var idsArr = [];  
-            $(".checkbox:checked").each(function() {  
+            var idsArr = [];
+            $(".checkbox:checked").each(function() {
                 idsArr.push($(this).attr('data-id'));
-            });  
-            if(idsArr.length <=0)  
-            {  
-                alert("Please select atleast one record to delete.");  
-            }  else {  
-                if(confirm("Are you sure, you want to delete the selected Agents?")){  
-                    var strIds = idsArr.join(","); 
+            });
+            if(idsArr.length <=0)
+            {
+                alert("Please select atleast one record to delete.");
+            }  else {
+                if(confirm("Are you sure, you want to delete the selected Agents?")){
+                    var strIds = idsArr.join(",");
                     $.ajax({
                         url: "{{ route('product.multiple-delete') }}",
                         type: 'DELETE',
@@ -117,7 +124,7 @@
                         data: 'ids='+strIds,
                         success: function (data) {
                             if (data['status']==true) {
-                                $(".checkbox:checked").each(function() {  
+                                $(".checkbox:checked").each(function() {
                                     $(this).parents("tr").remove();
                                 });
                             } else {
@@ -128,16 +135,16 @@
                             alert(data.responseText);
                         }
                     });
-                }  
-            }  
+                }
+            }
         });
         $('[data-toggle=confirmation]').confirmation({
             rootSelector: '[data-toggle=confirmation]',
             onConfirm: function (event, element) {
                 element.closest('form').submit();
             }
-        });   
-    
+        });
+
     });
 </script>
 

@@ -43,9 +43,17 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
 
-                            
+                            <div class="col-sm-6 mb-3">
+                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Trip Type</span></label>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2 d-flex align-items-center"><input class="mx-1" type="radio" name="travel" id="travel1"><label for="travel1" class="mb-0">One Way</label></div>
+                                    <div class=" d-flex align-items-center"><input checked="checked" class="mx-1"  type="radio" name="travel" id="travel2"><label for="travel2" class="mb-0">Round Trip</label></div>
+                                </div>
+                            </div>
 
                         <div class="row clearfix">
+
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class = "ml-3" href="javascript:void(0)" data-toggle="modal" , id = "new-customer">Add New Client</a> <a class = "ml-5" href="/customers">My Clients</a></label>
