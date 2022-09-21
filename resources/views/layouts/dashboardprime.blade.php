@@ -208,22 +208,35 @@
                                 <a href="/transactions/flights/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
-                                <a href="/hotels"><i class="zmdi zmdi-hotel"></i><span>Hotels</span></a>
-                                <a href="/hotels/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                                <a href="/transactions/hotels"><i class="zmdi zmdi-hotel"></i><span>Hotels</span></a>
+                                <a href="/transactions/hotels/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
-                                <a href="/packages"><i class="zmdi zmdi-assignment"></i><span>Packages</span></a>
-                                <a href="/packages/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                                <a href="/transactions/packages"><i class="zmdi zmdi-assignment"></i><span>Packages</span></a>
+                                <a href="/transactions/packages/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
                             </li>
         
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-arrow-split"></i><span>Types</span></a>
+
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Customers</span></a>
                         <ul class="ml-menu">
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="apartment.html">Residential</a><span><i class="zmdi zmdi-plus"></i></span></li>
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="office.html">Commercial</a><span><i class="zmdi zmdi-plus"></i></span></li>
+                          <li class="d-flex align-items-center justify-content-between">
+                            <a href="/customers"><i class="zmdi zmdi-assignment"></i><span>Customers</span></a>
+                            <a href="/customers/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                          </li>
                         </ul>
                     </li>
+
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Corporates</span></a>
+                        <ul class="ml-menu">
+                            <li class="d-flex align-items-center justify-content-between">
+                              <a href="/corpoates"><i class="zmdi zmdi-assignment"></i><span>Corporates</span></a>
+                              <a href="/corporates/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts"></i><span>Agents</span></a>
                         <ul class="ml-menu">
                             <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users">All Agents</a><span><i class="zmdi zmdi-plus"></i></span></li>
@@ -236,13 +249,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Clients</span></a>
-                        <ul class="ml-menu">
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users">All Clients</a><span><i class="zmdi zmdi-plus"></i></span></li>
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users/create">Buyers</a><span><i class="zmdi zmdi-plus"></i></span></li>
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users/create">Sellers</a><span><i class="zmdi zmdi-plus"></i></span></li>
-                        </ul>
-                    </li>
+                    
                     <li class="header">EXTRA COMPONENTS</li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Events</span></a>

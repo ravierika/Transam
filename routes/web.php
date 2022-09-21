@@ -38,8 +38,12 @@ Route::resource('/leads/flights', 'LeadController');
 Route::resource('/leads/hotels', 'LeadHotelController');
 Route::resource('/leads/packages', 'LeadPackageController');
 Route::resource('/transactions/flights', 'TransactionFlightController');
-
+Route::resource('/transactions/hotels', 'TransactionHotelController');
+Route::resource('/transactions/packages', 'TransactionPackageController');
 Route::resource('/customers', 'CustomerController');
+Route::resource('/corporates', 'CorporateController');
+
+
 
 
 Route::get('/{page}', 'AdminController@index');
