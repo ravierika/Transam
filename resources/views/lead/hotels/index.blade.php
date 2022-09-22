@@ -56,6 +56,7 @@
                                     <th>Rating</th>
                                     <th>Lead Status</th>
                                     <th>Remarks</th>
+
                                 </tr>
                             </thead>
                             {{-- need to change tbody laravel code --}}
