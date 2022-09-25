@@ -47,7 +47,7 @@
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="triptype">{{ __('passenger Name') }}<a class = "ml-5" href="javascript:void(0)" data-toggle="modal" , id = "new-customer">Add New Passenger</a> <a class = "ml-5" href="/customers">My Passengers</a></label>
+                                    <label for="triptype">{{ __('Passenger Name') }}<a class = "ml-5" href="javascript:void(0)" data-toggle="modal" , id = "new-customer">Add New Passenger</a> <a class = "ml-5" href="/customers">My Passengers</a></label>
                                     <input id="passenger" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Passenger Name">
 
                                     @error('Client_Name')
@@ -71,7 +71,7 @@
                             </div>
 
 
-                           
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="from"><span class="red ml-3">*</span> <span>From</span></label>
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="col-sm-6">
                                 <div class="form-group">
