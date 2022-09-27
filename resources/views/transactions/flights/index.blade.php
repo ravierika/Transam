@@ -37,12 +37,17 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="check_all"></th>
+                                    <th>Trip Type</th>
+                                    <th>Client Type</th>
                                     <th>Passenger Name</th>
                                     <th>User</th>
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Depart Date</th>
                                     <th>Return Date</th>
+                                    <th>Portal Booked</th>
+                                    <th>Ticket</th>
+                                    <th>Last date to issue</th>
                                     <th>Number of Adults</th>
                                     <th>Number of Kids</th>
                                     <th>Infant</th>
@@ -58,7 +63,7 @@
                                     <th>Remarks</th>
                                 </tr>
                             </thead>
-                            {{-- need to change tbody laravel code --}}
+                            {{-- need to change tbody with laravel code --}}
                             <tbody>
                                 @foreach($users as $user)
                                 <tr id="tr_{{$user->id}}">

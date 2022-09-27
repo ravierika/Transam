@@ -105,3 +105,28 @@ element.addEventListener('click', (e) => {
 })
 
 
+// check trip type ====> is it round or one way
+
+function checkTripType(id){
+    const radioBtn = document.getElementById(id);
+    const returnDate = document.getElementById('return')
+    if(radioBtn.checked = true){
+        if(radioBtn.value === 'oneWay'){
+            returnDate.setAttribute('readonly',true)
+        }else{
+            returnDate.removeAttribute('readonly')
+        }
+    }
+}
+
+
+// check ticket condition YES or NO
+
+function ticketChecked(e) {
+    const lateDateToIssue = document.getElementById('lastTickDate');
+    if(e === 'no'){
+        lateDateToIssue.removeAttribute('readonly');
+    }else{
+        lateDateToIssue.setAttribute('readonly',true)
+    }
+}
