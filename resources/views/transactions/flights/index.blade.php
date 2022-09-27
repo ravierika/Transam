@@ -60,6 +60,9 @@
                                     <th>Payment Rechived</th>
                                     <th>Payment Rechived Date</th>
                                     <th>Balance Payment</th>
+                                    <th>Bank Name</th>
+                                    <th>Cash</th>
+                                    <th>Payment Getway Name</th>
                                     <th>Remarks</th>
                                 </tr>
                             </thead>
