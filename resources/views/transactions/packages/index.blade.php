@@ -39,23 +39,19 @@
                                     <th><input type="checkbox" id="check_all"></th>
                                     <th>Passenger Name</th>
                                     <th>User</th>
-                                    <th>From</th>
-                                    <th>To</th>
-                                    <th>Depart Date</th>
-                                    <th>Return Date</th>
-                                    <th>Number of Adults</th>
-                                    <th>Number of Kids</th>
-                                    <th>Infant</th>
-                                    <th>Portal / GDS PNR</th>
-                                    <th>Adult Rate</th>
-                                    <th>Kids Rate</th>
-                                    <th>Infant Rate</th>
-                                    <th>E-ticket</th>
-                                    <th>Invoice</th>
-                                    <th>Payment Rechived</th>
-                                    <th>Payment Rechived Date</th>
-                                    <th>Balance Payment</th>
-                                    <th>Remarks</th>
+                                    <th>Hotel Name</th>
+                                    <th>City Name</th>
+                                    <th>Check in Date</th>
+                                    <th>Check out Date</th>
+                                    <th>Selling Price per night</th>
+                                    <th>Number of Rooms</th>
+                                    <th>Plan Type</th>
+                                    <th>Total Night</th>
+                                    <th>Hotel Vouchered</th>
+                                    <th>Last date to issue</th>
+                                    <th>Bank Name</th>
+                                    <th>Cash</th>
+                                    <th>Payment Getway Name</th>
                                 </tr>
                             </thead>
                             {{-- need to change tbody laravel code --}}

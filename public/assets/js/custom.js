@@ -107,14 +107,24 @@ element.addEventListener('click', (e) => {
 
 // check trip type ====> is it round or one way
 
-function checkTripType(id){
+function checkTripType(id,value,id2){
     const radioBtn = document.getElementById(id);
-    const returnDate = document.getElementById('return')
+    const returnDate = document.getElementById(id2)
     if(radioBtn.checked = true){
-        if(radioBtn.value === 'oneWay'){
-            returnDate.setAttribute('readonly',true)
+        if(radioBtn.value === value){
+            if(id2 === 'flightTicket'){
+                returnDate.removeAttribute('readonly')
+                returnDate.removeAttribute('disabled')
+            }else{
+                returnDate.setAttribute('readonly',true)
+            }
         }else{
-            returnDate.removeAttribute('readonly')
+            if(id2 === 'flightTicket'){
+                returnDate.setAttribute('disabled',true)
+                returnDate.setAttribute('readonly',true)
+            }else{
+                returnDate.removeAttribute('readonly')
+            }
         }
     }
 }

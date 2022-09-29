@@ -37,13 +37,32 @@
 
                     </div>
                     <div class="body">
+
+
                         <form class="form-horizontal" method="Post" action="{{route('users.store')}}" files="true">
                             {{ csrf_field() }}
                             <input type="hidden" value="{{Auth::user()->companyid}}" name="companyid">
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
                             <h6 class="mt-4">Client Information</h6>
+<div class="row mb-3">
+                            <div class="col-sm-6 mb-1">
+                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Client Type</span></label>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2 d-flex align-items-center"><input class="mx-1" checked="checked" type="radio" name="clientType" id="clientType1"><label for="clientType1" class="mb-0">Corporate</label></div>
+                                    <div class=" d-flex align-items-center"><input class="mx-1"  type="radio" name="clientType" id="clientType2"><label for="clientType2" class="mb-0">Personal</label></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-1">
+                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Client</span></label>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-2 d-flex align-items-center"><input value="withFlight" onchange="checkTripType('client1','withFlight','flightTicket')" class="mx-1" type="radio" name="client" id="client1"><label for="client1" class="mb-0">With Flight</label></div>
+                                    <div class=" d-flex align-items-center"><input value="withoutFlight" onchange="checkTripType('client2','withFlight','flightTicket')" checked="checked" class="mx-1"  type="radio" name="client" id="client2"><label for="client2" class="mb-0">Without Flight</label></div>
+                                </div>
+                            </div>
 
+
+                        </div>
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -59,6 +78,14 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="flightTicket"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload Ticket</span></label>
+                                    <input disabled id="flightTicket" type="file" name="flightTicket"class="form-control" placeholder="Infant Rate"  value="{{ old('flightTicket') }}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
                                     <label class="d-flex align-items-center" for="User"><span class="red ml-3">*</span> <span>User</span></label>
                                     <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{Auth::user()->name}}" readonly required autocomplete="Client_Name" placeholder="Assign User">
 
@@ -71,13 +98,12 @@
                             </div>
 
 
-                           
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="from"><span class="red ml-3">*</span> <span>From</span></label>
-                                    <input onchange="checkCity()" id="from" type="text" name="from" class="form-control @error('from') is-invalid @enderror" placeholder="Cities of World" required autocomplete="from" value="{{ old('from') }}">
-                                    @error('from')
-                                    <span class="invalid-feedback" role="alert" id="fromError">
+                                    <label class="d-flex align-items-center" for="hotel"><span class="red ml-3">*</span> <span>Hotel Name</span></label>
+                                    <input onchange="checkCity()" id="hotel" type="text" name="hotel" class="form-control @error('hotel') is-invalid @enderror" placeholder="Hotel Name" required autocomplete="hotel" value="{{ old('hotel') }}">
+                                    @error('hotel')
+                                    <span class="invalid-feedback" role="alert" id="hotelError">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -86,10 +112,10 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="to"><span class="red ml-3">*</span> <span>To</span></label>
-                                    <input onchange="checkCity()" id="to" type="text" name="to" class="form-control @error('to') is-invalid @enderror" placeholder="Cities of World" required autocomplete="to" value="{{ old('to') }}">
-                                    @error('to')
-                                    <span class="invalid-feedback" role="alert" id="toError">
+                                    <label class="d-flex align-items-center" for="city"><span class="red ml-3">*</span> <span>City Name</span></label>
+                                    <input onchange="checkCity()" id="city" type="text" name="city" class="form-control @error('city') is-invalid @enderror" placeholder="City Name" required autocomplete="city" value="{{ old('city') }}">
+                                    @error('city')
+                                    <span class="invalid-feedback" role="alert" id="cityError">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -99,10 +125,10 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Depart Date </span></label>
-                                    <input id="depart" type="date" name="depart" class="form-control @error('depart') is-invalid @enderror" placeholder="depart" required autocomplete="depart" value="{{ old('depart') }}">
-                                    @error('depart')
-                                    <span class="invalid-feedback" role="alert" id="departError">
+                                    <label class="d-flex align-items-center" for="checkIn"><span class="red ml-3">*</span> <span>Check in Date </span></label>
+                                    <input id="checkIn" type="date" name="checkIn" class="form-control @error('checkIn') is-invalid @enderror" placeholder="checkIn" required autocomplete="checkIn" value="{{ old('checkIn') }}">
+                                    @error('checkIn')
+                                    <span class="invalid-feedback" role="alert" id="checkInError">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -111,10 +137,10 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Return Date </span></label>
-                                    <input id="return" type="date" name="return" class="form-control @error('return') is-invalid @enderror" placeholder="return" required autocomplete="return" value="{{ old('return') }}">
-                                    @error('return')
-                                    <span class="invalid-feedback" role="alert" id="returnError">
+                                    <label class="d-flex align-items-center" for="checkOut"><span class="red ml-3">*</span> <span>Check out Date </span></label>
+                                    <input id="checkOut" type="date" name="checkOut" class="form-control @error('checkOut') is-invalid @enderror" placeholder="checkOut" required autocomplete="checkOut" value="{{ old('checkOut') }}">
+                                    @error('checkOut')
+                                    <span class="invalid-feedback" role="alert" id="checkOutError">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -122,33 +148,38 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Adults</span></label>
-                                    <input id="adult" type="number" name="adult" class="form-control @error('adult') is-invalid @enderror" placeholder="Number of Adults" required autocomplete="adult" value="{{ old('adult') }}">
-                                    @error('adult')
-                                    <span class="invalid-feedback" role="alert" id="adultError">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
+                                <label class="d-flex align-items-center" for="spPerNight"><span class="ml-3"></span> <span>Selling Price per night</span></label>
+                                <select name="spPerNight" class="form-control show-tick" value="{{ old('spPerNight') }}">
+                                    <option value="single">Single</option>
+                                    <option value="double">Double</option>
+                                    <option value="triple">Triple</option>
+                                    <option value="quadruple">Quadruple</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="d-flex align-items-center" for="room"><span class="ml-3"></span> <span>Number of Rooms</span></label>
+                                <select name="room" class="form-control show-tick" value="{{ old('room') }}">
+                                    <option value="single">Single</option>
+                                    <option value="double">Double</option>
+                                    <option value="triple">Triple</option>
+                                    <option value="quadruple">Quadruple</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="d-flex align-items-center" for="planType"><span class="ml-3"></span> <span>Plan Type</span></label>
+                                <select name="planType" class="form-control show-tick" value="{{ old('planType') }}">
+                                    <option value="cp">CP</option>
+                                    <option value="map">MAP</option>
+                                    <option value="ap">AP</option>
+                                </select>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Kids</span></label>
-                                    <input id="kids" type="number" name="kids" value="0" class="form-control @error('kids') is-invalid @enderror" placeholder="Number of Kids" required autocomplete="kids" value="{{ old('kids') }}">
-                                    @error('kids')
-                                    <span class="invalid-feedback" role="alert" id="kidsError">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Infant</span></label>
-                                    <input id="infant" type="number" name="infant" value="0" class="form-control @error('infant') is-invalid @enderror" placeholder="Infant" required autocomplete="infant" value="{{ old('infant') }}">
+                                    <label class="d-flex align-items-center" for="totalNight"><span class="red ml-3">*</span> <span>Total Night</span></label>
+                                    <input id="totalNight" type="text" name="totalNight"  class="form-control @error('infant') is-invalid @enderror" placeholder="Total Night" readonly required autocomplete="infant" value="{{ old('infant') }}">
                                     @error('infant')
                                     <span class="invalid-feedback" role="alert" id="infantError">
                                         <strong>{{ $message }}</strong>
@@ -157,90 +188,59 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Portal / GDS PNR</span></label>
-                                    <input id="pnr" type="text" name="pnr"  class="form-control @error('infant') is-invalid @enderror" placeholder="PNR" required autocomplete="infant" value="{{ old('infant') }}">
-                                    @error('infant')
-                                    <span class="invalid-feedback" role="alert" id="infantError">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
 
-                            
 
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="adlutRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Adult Rate</span></label>
-                                    <input id="adlutRate" type="text" name="adlutRate"class="form-control" placeholder="Adult Rate"  value="{{ old('adlutRate') }}">
-                                </div>
+                                <label class="d-flex align-items-center" for="hotelVouchered"><span class="ml-3"></span> <span>Hotel Vouchered</span></label>
+                                <select name="hotelVouchered" onchange="ticketChecked(this.value)" class="form-control show-tick" value="{{ old('hotelVouchered') }}">
+                                    <option value="yes">YES</option>
+                                    <option value="no">NO</option>
+                                </select>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="kidsRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Kids Rate</span></label>
-                                    <input id="kidsRate" type="text" name="kidsRate"class="form-control" placeholder="Kids Rate"  value="{{ old('kidsRate') }}">
+                                    <label class="d-flex align-items-center" for="lastTickDate"><span style="opacity: 1" class=" ml-3"></span> <span>Last date to issue</span></label>
+                                    <input readonly="true" id="lastTickDate" type="date" name="lastTickDate" class="form-control" placeholder="lastTickDate" required value="{{ old('lastTickDate') }}">
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Infant Rate</span></label>
-                                    <input id="infantRate" type="text" name="infantRate"class="form-control" placeholder="Infant Rate"  value="{{ old('infantRate') }}">
-                                </div>
-                            </div>
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload E-ticket</span></label>
-                                    <input id="infantRate" type="file" name="infantRate"class="form-control" placeholder="Infant Rate"  value="{{ old('infantRate') }}">
-                                </div>
-                            </div>
 
                             {{-- from accounts point of view --}}
 
 
 
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload invoice</span></label>
-                                    <input id="infantRate" type="file" name="infantRate"class="form-control" placeholder="Infant Rate"  value="{{ old('infantRate') }}">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Payment Rechived</span></label>
-                                    <input id="payRechived" type="text" name="payRechived"class="form-control" placeholder="Payment Rechived"  value="{{ old('payRechived') }}">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Payment Rechived Date</span></label>
-                                    <input id="payRechivedDate" type="date" name="payRechivedDate"class="form-control" placeholder="Payment Rechived Date"  value="{{ old('payRechivedDate') }}">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Balance Payment</span></label>
-                                    <input id="balancePay" type="text" name="balancePay"class="form-control" placeholder="Payment Rechived"  value="{{ old('balancePay') }}">
-                                </div>
-                            </div>
 
 
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Remarks</span></label>
-                                    <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
-                                </div>
+
+
+
+
+
                             </div>
+                            <h6>Accounts Section</h6>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Bank Name</span></label>
+                                        <input id="bankName" type="text" name="bankName"class="form-control" placeholder="Bank Name"  value="{{ old('bankName') }}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Cash</span></label>
+                                        <input id="Cash" type="text" name="cash"class="form-control" placeholder="Cash"  value="{{ old('cash') }}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Payment Getway Name</span></label>
+                                        <input id="pay_getway" type="text" name="pay_getway"class="form-control" placeholder="Payment Getway Name"  value="{{ old('pay_getway') }}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                             <div class="col-sm-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-round">Submit</button>
                             <a href="{{route('users.index')}}" class="btn btn-primary btn-round">Cancel</a>
@@ -255,6 +255,7 @@
 
 @section('scriptsc')
 <script src="{{URL::asset('assets/js/leads.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 
 @endsection
 
