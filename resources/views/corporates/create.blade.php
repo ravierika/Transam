@@ -43,13 +43,13 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
 
-                            <h6 class="mt-4">Client Information</h6>
+                            <h6 class="mt-4">Corporate Information</h6>
 
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="corporate"><span class="red ml-3">*</span> <span>Corporate Name</span></label>
-                                    <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Client Name">
+                                    <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Corporate Name">
 
                                     @error('Client_Name')
                                     <span class="invalid-feedback" role="alert">
@@ -84,8 +84,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="mobile"><span class="red ml-3">*</span> <span>Admin/Representive</span></label>
-                                    <input id="mobile" type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="mobile" required autocomplete="mobile" value="{{ old('mobile') }}">
+                                    <label class="d-flex align-items-center" for="mobile"><span class="red ml-3">*</span> <span>Admin / Representive Name</span></label>
+                                    <input id="mobile" type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="Enter Representative Name" required autocomplete="mobile" value="{{ old('mobile') }}">
                                     @error('mobile')
                                     <span class="invalid-feedback" role="alert" id="mobileError">
                                         <strong>{{ $message }}</strong>

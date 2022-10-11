@@ -44,20 +44,12 @@
                             <input type="hidden" value="{{Auth::user()->companyid}}" name="companyid">
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
-                            <h6 class="mt-4">Client Information</h6>
-<div class="row mb-3">
+        <div class="row mb-3">
+                            
                             <div class="col-sm-6 mb-1">
-                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Client Type</span></label>
                                 <div class="d-flex align-items-center">
-                                    <div class="mr-2 d-flex align-items-center"><input class="mx-1" checked="checked" type="radio" name="clientType" id="clientType1"><label for="clientType1" class="mb-0">Corporate</label></div>
-                                    <div class=" d-flex align-items-center"><input class="mx-1"  type="radio" name="clientType" id="clientType2"><label for="clientType2" class="mb-0">Personal</label></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 mb-1">
-                                <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Client</span></label>
-                                <div class="d-flex align-items-center">
-                                    <div class="mr-2 d-flex align-items-center"><input value="withFlight" onchange="checkTripType('client1','withFlight','flightTicket')" class="mx-1" type="radio" name="client" id="client1"><label for="client1" class="mb-0">With Flight</label></div>
-                                    <div class=" d-flex align-items-center"><input value="withoutFlight" onchange="checkTripType('client2','withFlight','flightTicket')" checked="checked" class="mx-1"  type="radio" name="client" id="client2"><label for="client2" class="mb-0">Without Flight</label></div>
+                                    <div class="mr-2 d-flex align-items-center"><input value="withFlight" onchange="checkTripType('client1','withFlight','flightTicket')" class="mx-1" type="radio" name="client" id="client1"><label for="client1" class="mb-0">With Flights</label></div>
+                                    <div class=" d-flex align-items-center"><input value="withoutFlight" onchange="checkTripType('client2','withFlight','flightTicket')" checked="checked" class="mx-1"  type="radio" name="client" id="client2"><label for="client2" class="mb-0">Without Flights</label></div>
                                 </div>
                             </div>
 
@@ -66,7 +58,7 @@
                         <div class="row clearfix">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="triptype">{{ __('passenger Name') }}<a class = "ml-5" href="javascript:void(0)" data-toggle="modal" , id = "new-customer">Add New Passenger</a> <a class = "ml-5" href="/customers">My Passengers</a></label>
+                                    <label for="triptype"><a class = "ml-3" href="javascript:void(0)" data-toggle="modal" , id = "new-customer">Add New Passenger</a> <a class = "ml-5" href="/customers">My Passengers</a></label>
                                     <input id="passenger" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Passenger Name">
 
                                     @error('Client_Name')
@@ -205,41 +197,77 @@
                                 </div>
                             </div>
 
+                        </div>
 
-
-                            {{-- from accounts point of view --}}
-
-
-
-
-
-
-
-
-
-
+                        <div class="col-sm-12 mt-2">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Ops Remarks</span></label>
+                                <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
                             </div>
+                        </div>
+                        
+                            
+                        {{-- from accounts point of view --}}
+
+                        <div class="payment">
                             <h6>Accounts Section</h6>
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Bank Name</span></label>
-                                        <input id="bankName" type="text" name="bankName"class="form-control" placeholder="Bank Name"  value="{{ old('bankName') }}">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Cash</span></label>
-                                        <input id="Cash" type="text" name="cash"class="form-control" placeholder="Cash"  value="{{ old('cash') }}">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Payment Getway Name</span></label>
-                                        <input id="pay_getway" type="text" name="pay_getway"class="form-control" placeholder="Payment Getway Name"  value="{{ old('pay_getway') }}">
-                                    </div>
-                                </div>
+                                
+                        {{-- from accounts point of view --}}
+
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload invoice</span></label>
+                                <input id="infantRate" type="file" name="infantRate"class="form-control" placeholder="Infant Rate"  value="{{ old('infantRate') }}">
                             </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Total Payment Rechived</span></label>
+                                <input id="payRechived" type="text" name="payRechived"class="form-control" placeholder="Total Payment Rechived"  value="{{ old('payRechived') }}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Payment Rechived Date</span></label>
+                                <input id="payRechivedDate" type="date" name="payRechivedDate"class="form-control" placeholder="Payment Rechived Date"  value="{{ old('payRechivedDate') }}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Balance Payment</span></label>
+                                <input id="balancePay" type="text" name="balancePay"class="form-control" placeholder="Payment Rechived"  value="{{ old('balancePay') }}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Form of Payment</span></label>
+                                        <select name="portal" class="form-control show-tick" value="{{ old('portal') }}">
+                                            {{-- <option value="">-- Class --</option> --}}
+                                            <option value="HDFC">HDFC Bank</option>
+                                            <option value="ICICI">ICICI Bank</option>
+                                            <option value="HDFCP">HDFC Personal</option>
+                                            <option value="HDFCPazapp">HDFC Pazapp</option>
+                                            <option value="HDFCPazapp">Cash</option>
+                                        </select>                                        
+                                    </div>
+                                </div>
+                               
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Accounts Remarks</span></label>
+                                <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
+                            </div>
+                        </div>
+                        
                         </div>
                             <div class="col-sm-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-round">Submit</button>

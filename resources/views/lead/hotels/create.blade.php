@@ -89,7 +89,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Rooms</span></label>
-                                        <input id="rooms" type="number" name="rooms" class="form-control @error('adult') is-invalid @enderror" placeholder="Number of Rooms" required autocomplete="rooms" value="{{ old('rooms') }}">
+                                        <input id="rooms" type="number" name="rooms" class="form-control @error('adult') is-invalid @enderror" placeholder="Number of Rooms" required autocomplete="rooms" value="1">
                                         @error('rooms')
                                         <span class="invalid-feedback" role="alert" id="roomsError">
                                             <strong>{{ $message }}</strong>
@@ -187,7 +187,6 @@
                                 <div class="col-sm-6">
                                     <label class="d-flex align-items-center" for="class"><span class="red ml-3">*</span> <span>Lead Status</span></label>
                                     <select name="status" class="form-control show-tick" value="{{ old('class') }}">
-                                        <option value="">-- Lead Status --</option>
                                         <option value="Open">Open</option>
                                         <option value="Converted">Converted</option>
                                         <option value="Lost">Lost</option>

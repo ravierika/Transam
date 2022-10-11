@@ -169,7 +169,6 @@
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="class"><span class="ml-3"></span> <span>Flight Class</span></label>
                                 <select name="class" class="form-control show-tick" value="{{ old('class') }}">
-                                    <option value="">-- Class --</option>
                                     <option value="Economy">Economy</option>
                                     <option value="Premium">Premium</option>
                                     <option value="Business">Business</option>
@@ -179,7 +178,6 @@
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="class"><span class="ml-3"></span> <span>Preference</span></label>
                                 <select name="preference" class="form-control show-tick" value="{{ old('class') }}">
-                                    <option value="">-- preference --</option>
                                     <option value="Economy">Direct</option>
                                     <option value="Premium">Via</option>
                                     <option value="Business">Both</option>
@@ -189,7 +187,6 @@
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="class"><span class="red ml-3">*</span> <span>Lead Status</span></label>
                                 <select name="status" class="form-control show-tick" value="{{ old('class') }}">
-                                    <option value="">-- Lead Status --</option>
                                     <option value="Open">Open</option>
                                     <option value="Converted">Converted</option>
                                     <option value="Lost">Lost</option>
@@ -466,6 +463,7 @@
 
 @section('scriptsc')
 <script src="{{URL::asset('assets/js/leads.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 
 @endsection
 
