@@ -37,21 +37,33 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="check_all"></th>
+                                    <th>Tour Type</th>
                                     <th>Passenger Name</th>
                                     <th>User</th>
                                     <th>Hotel Name</th>
                                     <th>City Name</th>
                                     <th>Check in Date</th>
                                     <th>Check out Date</th>
-                                    <th>Selling Price per night</th>
                                     <th>Number of Rooms</th>
                                     <th>Plan Type</th>
+                                    <th>Selling price Per Adult</th>
+                                    <th>Selling price Per Child</th>
+                                    <th>Selling price Per infant</th>
                                     <th>Total Night</th>
                                     <th>Hotel Vouchered</th>
                                     <th>Last date to issue</th>
-                                    <th>Bank Name</th>
-                                    <th>Cash</th>
+                                    <th>Upload Hotel Voucher</th>
+                                    <th>Upload Ticket</th>
+                                    <th>Total sale value</th>
+
+
+                                    <th> Invoice</th>
+                                    <th>Total Payment Rechived</th>
+                                    <th>Payment Rechived Date</th>
+                                    <th>Balance Payment</th>
                                     <th>Payment Getway Name</th>
+                                    <th>Ops Remarks</th>
+                                    <th>Accounts Remarks</th>
                                 </tr>
                             </thead>
                             {{-- need to change tbody laravel code --}}

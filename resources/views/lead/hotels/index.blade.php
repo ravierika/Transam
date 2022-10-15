@@ -51,7 +51,6 @@
                                     <th>Kids Age (4)</th>
                                     <th>Kids Age (5)</th>
                                     <th>Kids Age (6)</th>
-                                    <th>Number of Nights</th>
                                     <th>Bed Configuration</th>
                                     <th>Rating</th>
                                     <th>Lead Status</th>

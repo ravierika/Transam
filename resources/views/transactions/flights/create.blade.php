@@ -43,18 +43,18 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
                             <h6 class="mt-4">Flight Information</h6>
-<div class="row">
-    <div class="col-sm-6 mb-1">
-        <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Trip Type</span></label>
-        <div class="d-flex align-items-center">
-            <div class="mr-2 d-flex align-items-center"><input value="oneWay" onchange="checkTripType('travel1','oneWay','return')" class="mx-1" type="radio" name="travel" id="travel1"><label for="travel1" class="mb-0">One Way</label></div>
-            <div class=" d-flex align-items-center"><input value="roundTrip" onchange="checkTripType('travel2','oneWay','return')" checked="checked" class="mx-1"  type="radio" name="travel" id="travel2"><label for="travel2" class="mb-0">Round Trip</label></div>
-        </div>
-    </div>
-    
-</div>
+                            <div class="row">
+                                <div class="col-sm-6 mb-1">
+                                    <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Trip Type</span></label>
+                                    <div class="d-flex align-items-center">
+                                        <div class="mr-2 d-flex align-items-center"><input value="oneWay" onchange="checkTripType('travel1','oneWay','return')" class="mx-1" type="radio" name="travel" id="travel1"><label for="travel1" class="mb-0">One Way</label></div>
+                                        <div class=" d-flex align-items-center"><input value="roundTrip" onchange="checkTripType('travel2','oneWay','return')" checked="checked" class="mx-1"  type="radio" name="travel" id="travel2"><label for="travel2" class="mb-0">Round Trip</label></div>
+                                    </div>
+                                </div>
+
+                            </div>
                             <h6 class="mt-4">Client Information</h6>
-                        <div class="row clearfix">
+                            <div class="row clearfix">
 
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -229,7 +229,7 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 0">*</span><span>Grand Total</span></label>
+                                    <label class="d-flex align-items-center" for="grandTotal"> <span class="red ml-3" style="opacity: 0">*</span><span>Grand Total</span></label>
                                     <input id="grandTotal" type="text" name="grandTotal"class="form-control" placeholder="Grand Total"  value="{{ old('infantRate') }}">
                                 </div>
                             </div>
@@ -256,7 +256,7 @@
                             <div class="payment">
                                 <h6>Accounts Section</h6>
                                 <div class="row">
-                                    
+
                             {{-- from accounts point of view --}}
 
 
@@ -291,18 +291,18 @@
 
                             <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Form of Payment</span></label>
-                                            <select name="portal" class="form-control show-tick" value="{{ old('portal') }}">
+                                            <label class="d-flex align-items-center" for="formOfPayment"> <span class="red ml-3" style="opacity: 1">*</span><span>Form of Payment</span></label>
+                                            <select name="formOfPayment" class="form-control show-tick" value="{{ old('formOfPayment') }}">
                                                 {{-- <option value="">-- Class --</option> --}}
                                                 <option value="HDFC">HDFC Bank</option>
                                                 <option value="ICICI">ICICI Bank</option>
                                                 <option value="HDFCP">HDFC Personal</option>
                                                 <option value="HDFCPazapp">HDFC Pazapp</option>
                                                 <option value="HDFCPazapp">Cash</option>
-                                            </select>                                        
+                                            </select>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                             <div class="col-sm-12">

@@ -9,7 +9,7 @@
                 <h2>Clients
                 <small>Welcome to {{$comp}}</small>
                 </h2>
-            </div>            
+            </div>
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-md-down">
                     <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#fff">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
@@ -35,9 +35,9 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong>{{$comp}}</strong> Clients </h2>
-                        
+
                         <ul class="header-dropdown">
-                            <li class="add"> 
+                            <li class="add">
                                 <a href="/customers/create" class="btn btn-primary btn-sm"><i class="zmdi zmdi-plus mr-2"></i>Add User</a>
                             </li>
                             <li class="remove">
@@ -49,18 +49,24 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
-                                    <th>Customer ID</th>
-                                    <th>Name</th>
+                                    <th>Client Name</th>
                                     <th>Email</th>
-                                    <th>Mobile</th>
-                                    <th>Company</th>
-                                    <th>GST</th>                                        
-                                    <th>Nature</th>
-                                    <th>Value</th>
+                                    <th>Phone</th>
+                                    <th>Corporate</th>
+                                    <th>Corporate Name</th>
+                                    <th>Gender</th>
+                                    <th>Frequent Flyer Number</th>
+                                    <th>Passpost/ID Copy</th>
+                                    <th>Room Preference</th>
+                                    <th>Seat Preference</th>
+                                    <th>Date of birth</th>
+                                    <th>Annivarsary Date</th>
+                                    <th>Address</th>
+                                    <th>Remarks</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($customers as $customer)  
+                                @foreach($customers as $customer)
                                 <tr>
                                     <td>{{$customer->id}}</td>
                                     <td><a href="{{route('customers.edit', $customer->id)}}"> {{$customer->name}}</a></td>
@@ -69,18 +75,18 @@
                                     <td>{{$customer->clientcompany}}</td>
                                     <td>{{$customer->gst}}</td>
                                     <td>{{$customer->nature}}</td>
-                                    
+
                                 </tr>
                                 @endforeach
                             </tbody>
-                               
-                            
+
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Exportable Table --> 
+        <!-- #END# Exportable Table -->
     </div>
     </div>
 </section>

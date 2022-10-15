@@ -38,7 +38,6 @@
                                 <tr>
                                     <th><input type="checkbox" id="check_all"></th>
                                     <th>Trip Type</th>
-                                    <th>Client Type</th>
                                     <th>Passenger Name</th>
                                     <th>User</th>
                                     <th>From</th>
@@ -55,14 +54,13 @@
                                     <th>Adult Rate</th>
                                     <th>Kids Rate</th>
                                     <th>Infant Rate</th>
+                                    <th>Grand Total</th>
                                     <th>E-ticket</th>
                                     <th>Invoice</th>
-                                    <th>Payment Rechived</th>
+                                    <th>Total Payment Rechived</th>
                                     <th>Payment Rechived Date</th>
                                     <th>Balance Payment</th>
-                                    <th>Bank Name</th>
-                                    <th>Cash</th>
-                                    <th>Payment Getway Name</th>
+                                    <th>Form of Payment</th>
                                     <th>Remarks</th>
                                 </tr>
                             </thead>

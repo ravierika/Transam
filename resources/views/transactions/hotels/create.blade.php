@@ -11,7 +11,7 @@
                 <small>Welcome to {{$compn}}</small>
                 </h2>
             </div>
-            
+
         </div>
     </div>
 
@@ -54,6 +54,9 @@
                                     @enderror
                                 </div>
                             </div>
+
+
+
 
 
 
@@ -118,12 +121,37 @@
 
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="room"><span class="ml-3"></span> <span>Number of Rooms</span></label>
-                                <select name="room" class="form-control show-tick" value="{{ old('room') }}">
-                                    <option value="single">Single</option>
-                                    <option value="double">Double</option>
-                                    <option value="triple">Triple</option>
-                                    <option value="quadruple">Quadruple</option>
+                                <select id="numberOfRooms" onchange="renderSingleRoomPrice(this.value,'renderRoomPrice')" name="room" class="form-control show-tick" value="{{ old('room') }}">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
                                 </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center ml-1 mb-3">
+                                    <input value="checked" onchange="updatePrice()" type="checkbox" name="priceWillSame" id="priceWillSame">
+                                    <label class="mb-0 ml-2" for="priceWillSame">All rooms price wil same</label>
+                                </div>
+                                <div class="row" id="renderRoomPrice">
+                                    <div class="col-4 mb-2">
+
+                                        <div class="form-group">
+                                        <label class="d-flex align-items-center" for="roomPrice1"><span class="ml-3"></span> <span>Room Price (1) </span></label>
+                                                <input type="number" min="100" id="roomPrice1" name="roomPrice1" class="form-control @error('roomPrice1') is-invalid @enderror " value="{{ old('roomPrice1') }}" required autocomplete="Client_Name" placeholder="Room Price">
+
+                                                @error('roomPrice1')
+                                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+
+                                            </div>
+                                </div>
                             </div>
 
                             <div class="col-sm-6">
@@ -164,6 +192,30 @@
                                 </div>
                             </div>
 
+                            <div class="col-sm-6">
+                                <label class="d-flex align-items-center" for="portal"><span class="ml-3"></span> <span>Portal Booked</span></label>
+                                <select name="portal" class="form-control show-tick" value="{{ old('portal') }}">
+                                    {{-- <option value="">-- Class --</option> --}}
+                                    <option value="adult">SP Adult</option>
+                                    <option value="child">SP Child</option>
+                                    <option value="infant">SP Infant</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="hotelVoucher"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload Hotel Voucher </span></label>
+                                    <input id="hotelVoucher" type="file" name="hotelVoucher"class="form-control" placeholder=""  value="{{ old('hotelVoucher') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="totalSaleValue"> <span class="red ml-3" style="opacity: 0">*</span><span>Total sale value</span></label>
+                                    <input id="totalSaleValue" type="text" name="totalSaleValue"class="form-control" placeholder="Total sale value"  value="{{ old('totalSaleValue') }}">
+                                </div>
+                            </div>
+
 
                         </div>
 
@@ -179,7 +231,7 @@
                         <div class="payment">
                             <h6>Accounts Section</h6>
                             <div class="row">
-                                
+
 
 
                         <div class="col-sm-6">
@@ -220,10 +272,10 @@
                                             <option value="HDFCP">HDFC Personal</option>
                                             <option value="HDFCPazapp">HDFC Pazapp</option>
                                             <option value="HDFCPazapp">Cash</option>
-                                        </select>                                        
+                                        </select>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -232,7 +284,7 @@
                                 <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
                             </div>
                         </div>
-                    
+
 
 
                             <div class="col-sm-12 mt-4">

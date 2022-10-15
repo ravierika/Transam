@@ -72,5 +72,5 @@ const renderKidsAge = (id) => {
             </div>
         `
     }
-    console.log(initialKids)
+    // console.log(initialKids)
 }

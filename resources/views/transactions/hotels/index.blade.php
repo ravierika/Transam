@@ -45,13 +45,26 @@
                                     <th>Check out Date</th>
                                     <th>Selling Price per night</th>
                                     <th>Number of Rooms</th>
+                                    <th>Room Price (1)</th>
+                                    <th>Room Price (2)</th>
+                                    <th>Room Price (3)</th>
+                                    <th>Room Price (4)</th>
+                                    <th>Room Price (5)</th>
+                                    <th>Room Price (6)</th>
                                     <th>Plan Type</th>
                                     <th>Total Night</th>
                                     <th>Hotel Vouchered</th>
+                                    <th>Portal Booked</th>
                                     <th>Last date to issue</th>
-                                    <th>Bank Name</th>
-                                    <th>Cash</th>
+                                    <th>Hotel Voucher (file)</th>
+                                    <th>Total sale value</th>
+                                    <th>Invoice</th>
+                                    <th>Total Payment Rechived</th>
+                                    <th>Payment Rechived Date</th>
+                                    <th>Balance Payment</th>
                                     <th>Payment Getway Name</th>
+                                    <th>Ops Remarks</th>
+                                    <th>Accounts Remarks</th>
                                 </tr>
                             </thead>
                             {{-- need to change tbody laravel code --}}

@@ -451,3 +451,8 @@ section.content:before{
     position: relative;
     top: 2px;
 }
+.phnEmailRequiredText{
+    color:red;
+    font-size: 10px;
+    margin-left: 5px;
+}

@@ -45,7 +45,7 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
         <div class="row mb-3">
-                            
+
                             <div class="col-sm-6 mb-1">
                                 <div class="d-flex align-items-center">
                                     <div class="mr-2 d-flex align-items-center"><input value="withFlight" onchange="checkTripType('client1','withFlight','flightTicket')" class="mx-1" type="radio" name="client" id="client1"><label for="client1" class="mb-0">With Flights</label></div>
@@ -68,12 +68,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="flightTicket"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload Ticket</span></label>
-                                    <input disabled id="flightTicket" type="file" name="flightTicket"class="form-control" placeholder="Infant Rate"  value="{{ old('flightTicket') }}">
-                                </div>
-                            </div>
+
 
 
                             <div class="col-sm-6">
@@ -88,6 +83,16 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            {{-- <div class="col-sm-6">
+                                <label class="d-flex align-items-center" for="portal"><span class="ml-3"></span> <span>Portal Booked</span></label>
+                                <select name="portal" class="form-control show-tick" value="{{ old('portal') }}">
+                                    <option value="">-- Class --</option>
+                                    <option value="adult">SP Adult</option>
+                                    <option value="child">SP Child</option>
+                                    <option value="infant">SP Infant</option>
+                                </select>
+                            </div> --}}
 
 
                             <div class="col-sm-6">
@@ -139,23 +144,16 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <label class="d-flex align-items-center" for="spPerNight"><span class="ml-3"></span> <span>Selling Price per night</span></label>
-                                <select name="spPerNight" class="form-control show-tick" value="{{ old('spPerNight') }}">
-                                    <option value="single">Single</option>
-                                    <option value="double">Double</option>
-                                    <option value="triple">Triple</option>
-                                    <option value="quadruple">Quadruple</option>
-                                </select>
-                            </div>
 
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="room"><span class="ml-3"></span> <span>Number of Rooms</span></label>
                                 <select name="room" class="form-control show-tick" value="{{ old('room') }}">
-                                    <option value="single">Single</option>
-                                    <option value="double">Double</option>
-                                    <option value="triple">Triple</option>
-                                    <option value="quadruple">Quadruple</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
                                 </select>
                             </div>
 
@@ -167,6 +165,45 @@
                                     <option value="ap">AP</option>
                                 </select>
                             </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="sellPriceAdult"><span class="red ml-3">*</span> <span>	Selling price Per Adult</span></label>
+                                    <input id="sellPriceAdult" type="text" name="sellPriceAdult"  class="form-control @error('sellPriceAdult') is-invalid @enderror" placeholder="Selling price Per Adult"  required autocomplete="sellPriceAdult" value="{{ old('sellPriceAdult') }}">
+                                    @error('sellPriceAdult')
+                                    <span class="invalid-feedback" role="alert" id="sellPriceAdult">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="sellPriceChaild"><span class="red ml-3">*</span> <span>	Selling price Per Child</span></label>
+                                    <input id="sellPriceChaild" type="text" name="sellPriceChaild"  class="form-control @error('sellPriceChaild') is-invalid @enderror" placeholder="Selling price Per Chaild"  required autocomplete="sellPriceChaild" value="{{ old('sellPriceChaild') }}">
+                                    @error('sellPriceChaild')
+                                    <span class="invalid-feedback" role="alert" id="sellPriceChaild">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="sellPriceinfant"><span class="red ml-3">*</span> <span>	Selling price Per infant</span></label>
+                                    <input id="sellPriceinfant" type="text" name="sellPriceinfant"  class="form-control @error('sellPriceinfant') is-invalid @enderror" placeholder="Selling price Per infant"  required autocomplete="sellPriceinfant" value="{{ old('sellPriceinfant') }}">
+                                    @error('sellPriceinfant')
+                                    <span class="invalid-feedback" role="alert" id="sellPriceinfant">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
 
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -197,6 +234,28 @@
                                 </div>
                             </div>
 
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="hotelVoucher"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload Hotel Voucher </span></label>
+                                    <input  id="hotelVoucher" type="file" name="hotelVoucher"class="form-control" placeholder="Infant Rate"  value="{{ old('hotelVoucher') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="flightTicket"> <span class="red ml-3" style="opacity: 0">*</span><span>Upload Ticket</span></label>
+                                    <input disabled id="flightTicket" type="file" name="flightTicket"class="form-control" placeholder="Infant Rate"  value="{{ old('flightTicket') }}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="totalSaleValue"> <span class="red ml-3" style="opacity: 0">*</span><span>Total sale value</span></label>
+                                    <input id="totalSaleValue" type="text" name="totalSaleValue"class="form-control" placeholder="Total sale value"  value="{{ old('totalSaleValue') }}">
+                                </div>
+                            </div>
+
+
                         </div>
 
                         <div class="col-sm-12 mt-2">
@@ -205,14 +264,14 @@
                                 <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
                             </div>
                         </div>
-                        
-                            
+
+
                         {{-- from accounts point of view --}}
 
                         <div class="payment">
                             <h6>Accounts Section</h6>
                             <div class="row">
-                                
+
                         {{-- from accounts point of view --}}
 
 
@@ -247,7 +306,7 @@
 
                         <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label class="d-flex align-items-center" for="infantRate"> <span class="red ml-3" style="opacity: 1">*</span><span>Form of Payment</span></label>
+                                        <label class="d-flex align-items-center" for="portal"> <span class="red ml-3" style="opacity: 1">*</span><span>Form of Payment</span></label>
                                         <select name="portal" class="form-control show-tick" value="{{ old('portal') }}">
                                             {{-- <option value="">-- Class --</option> --}}
                                             <option value="HDFC">HDFC Bank</option>
@@ -255,10 +314,10 @@
                                             <option value="HDFCP">HDFC Personal</option>
                                             <option value="HDFCPazapp">HDFC Pazapp</option>
                                             <option value="HDFCPazapp">Cash</option>
-                                        </select>                                        
+                                        </select>
                                     </div>
                                 </div>
-                               
+
                         </div>
 
                         <div class="col-sm-12">
@@ -267,7 +326,7 @@
                                 <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
                             </div>
                         </div>
-                        
+
                         </div>
                             <div class="col-sm-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-round">Submit</button>

@@ -63,6 +63,7 @@
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="email"><span class="red ml-3">*</span> <span>Email</span></label>
                                     <input id="email" type="text" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" required autocomplete="email" value="{{ old('email') }}">
+                                    <p class="phnEmailRequiredText">Phone or email is mandatory</p>
                                     @error('email')
                                     <span class="invalid-feedback" role="alert" id="emailError">
                                         <strong>{{ $message }}</strong>
@@ -75,6 +76,7 @@
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="mobile"><span class="red ml-3">*</span> <span>Phone</span></label>
                                     <input id="mobile" type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="mobile" required autocomplete="mobile" value="{{ old('mobile') }}">
+                                    <p class="phnEmailRequiredText">Phone or email is mandatory</p>
                                     @error('mobile')
                                     <span class="invalid-feedback" role="alert" id="mobileError">
                                         <strong>{{ $message }}</strong>
@@ -84,11 +86,35 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label class="d-flex align-items-center" for="class"><span class="ml-3"></span> <span>Corporate</span></label>
-                                <select name="class" class="form-control show-tick" value="{{ old('class') }}">
+                                <label class="d-flex align-items-center" for="corporate"><span class="ml-3"></span> <span>Corporate</span></label>
+                                <select onchange="handleCorporate(this.value)" name="corporate" class="form-control show-tick" value="{{ old('corporate') }}">
                                     {{-- <option value="">-- Class --</option> --}}
                                     <option value="corporate">Corporate</option>
                                     <option value="individual">Individual</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="corporateName"><span class="red ml-3">*</span> <span>Corporate Name</span></label>
+                                    <input  id="corporateName" type="text" name="corporateName" class="form-control @error('corporateName') is-invalid @enderror" placeholder="corporateName"  required autocomplete="corporateName" value="{{ old('corporateName') }}">
+                                    @error('corporateName')
+                                    <span class="invalid-feedback" role="alert" id="corporateNameError">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="d-flex align-items-center" for="gender"><span class="ml-3 red">*</span> <span>Gender</span></label>
+                                <select name="gender" class="form-control show-tick" value="{{ old('gender') }}">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="cummon">cummon</option>
+
+                                    {{-- you can delete cummon gender --}}
+
                                 </select>
                             </div>
 
@@ -101,27 +127,14 @@
 
 
 
+                            {{-- <div class="flight row w-100" id="flight"> --}}
 
 
-
-                            <div class="flight row w-100" id="flight">
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="d-flex align-items-center" for="Address"><span style="opacity: 0" class="red ml-3">*</span> <span>Address</span></label>
-                                    <input onchange="checkCity()" id="Address" type="text" name="Address" class="form-control @error('from') is-invalid @enderror" placeholder="Cities of World" required autocomplete="Address" value="{{ old('Address') }}">
-                                    @error('Address')
-                                    <span class="invalid-feedback" role="alert" id="AddressError">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="to"><span style="opacity:0" class="red ml-3">*</span> <span>Frequent Flyer Number</span></label>
-                                    <input onchange="checkCity()" id="to" type="text" name="to" class="form-control @error('to') is-invalid @enderror" placeholder="Cities of World" required autocomplete="to" value="{{ old('to') }}">
+                                    <input onchange="checkCity()" id="to" type="text" name="to" class="form-control @error('to') is-invalid @enderror" placeholder="Frequent Flyer Number" required autocomplete="to" value="{{ old('to') }}">
                                     @error('to')
                                     <span class="invalid-feedback" role="alert" id="toError">
                                         <strong>{{ $message }}</strong>
@@ -157,8 +170,8 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="d-flex align-items-center" for="depart"><span style="opacity:0" class="red ml-3">*</span> <span>Dob</span></label>
-                                    <input id="dob" type="text" name="dob" class="form-control @error('dob') is-invalid @enderror" placeholder="Dob" required autocomplete="dob" value="{{ old('dob') }}">
+                                    <label class="d-flex align-items-center" for="depart"><span style="opacity:0" class="red ml-3">*</span> <span>Date of birth</span></label>
+                                    <input id="dob" type="date" name="dob" class="form-control @error('dob') is-invalid @enderror" placeholder="Dob" required autocomplete="dob" value="{{ old('dob') }}">
                                     @error('dob')
                                     <span class="invalid-feedback" role="alert" id="dobError">
                                         <strong>{{ $message }}</strong>
@@ -174,17 +187,23 @@
 
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="Address"><span style="opacity: 0" class="red ml-3">*</span> <span>Address</span></label>
+                                    <input onchange="checkCity()" id="Address" type="text" name="Address" class="form-control @error('from') is-invalid @enderror" placeholder="Cities of World" required autocomplete="Address" value="{{ old('Address') }}">
+                                    @error('Address')
+                                    <span class="invalid-feedback" role="alert" id="AddressError">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
 
-                            <div class="col-sm-6">
-                                <label class="d-flex align-items-center" for="gender"><span class="ml-3"></span> <span>Gender</span></label>
-                                <select name="gender" class="form-control show-tick" value="{{ old('gender') }}">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="cummon">cummon</option>
-
-                                    {{-- you can delete cummon gender --}}
-
-                                </select>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Remarks</span></label>
+                                    <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
+                                </div>
                             </div>
 
 
@@ -194,7 +213,9 @@
 
 
 
-                            </div>
+
+
+                            {{-- </div> --}}
 
 
                         </div>
@@ -213,6 +234,7 @@
 
 @section('scriptsc')
 <script src="{{URL::asset('assets/js/leads.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 
 @endsection
 

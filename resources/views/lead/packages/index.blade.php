@@ -37,8 +37,11 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="check_all"></th>
+                                    <th>Flights in Label</th>
                                     <th>Client Name</th>
                                     <th>User</th>
+                                    <th>From</th>
+                                    <th>To</th>
                                     <th>City/Hotel Name</th>
                                     <th>Number of Rooms</th>
                                     <th>Check In</th>

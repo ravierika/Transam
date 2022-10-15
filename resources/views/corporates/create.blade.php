@@ -107,7 +107,7 @@
 
 
 
-                            <div class="flight row w-100" id="flight">
+                            {{-- <div class="flight row w-100" id="flight"> --}}
 
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -152,15 +152,33 @@
                                 </div>
                             </div>
 
-
-
-
-
-
-
-
-
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="Address"><span style="opacity: 0" class="red ml-3">*</span> <span>Address</span></label>
+                                    <input onchange="checkCity()" id="Address" type="text" name="Address" class="form-control @error('from') is-invalid @enderror" placeholder="Cities of World" required autocomplete="Address" value="{{ old('Address') }}">
+                                    @error('Address')
+                                    <span class="invalid-feedback" role="alert" id="AddressError">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
                             </div>
+
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Remarks</span></label>
+                                    <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            {{-- </div> --}}
 
 
                         </div>
