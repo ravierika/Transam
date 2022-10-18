@@ -31,8 +31,8 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="index.html">Home</a></li>
-              <li><a class="active" href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a class="active" href="/services">Services</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
             <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
           </div>

@@ -33,8 +33,8 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/contact">Contact</a></li>
               <li class=""><a href="/login">Log In</a></li>
               <li class=""><a href="/register">Sign Up</a></li>
             </ul>
