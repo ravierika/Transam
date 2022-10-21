@@ -1,9 +1,7 @@
 /* font link */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@400;700&family=Orbitron:wght@600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@400;700&family=Montserrat:wght@200;400;500&family=Orbitron:wght@600;700;800&display=swap');
-html{
-    scroll-behavior: smooth;
-}
+
 * {
   padding: 0;
   margin: 0;
@@ -552,9 +550,44 @@ footer.footer_section button {
   width: 50px;
   height: 50px;
 }
-
-
-
+.single_desc .heading{
+  font-weight: 400;
+    font-size: 20px;
+    color: #ea9c00;
+}
+.single_desc{
+  margin-bottom: 20px;
+}
+.single_desc p{
+  margin-bottom: 10px;
+}
+.single_desc ol{
+  list-style-type: upper-alpha;
+  list-style:upper-alpha;
+}
+.single_desc ol li{
+  color:rgb(94 94 94);
+  font-family: 'Montserrat';
+  margin-bottom: calc(5px + 5px);
+  position:relative;
+  display:block;
+}
+.single_desc ol li em{
+  color: rgb(94 94 94);
+}
+.single_desc ol > li::before{
+  content: '*';
+  position: absolute;
+  left:-15px;
+  /* top:50%; */
+  /* transform:translateY(-50%); */
+  font-size:20px;
+  color:#ea9c00
+}
+.single_desc p em{
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
 /* responsive css */
 
 @media (max-width: 767px) {
