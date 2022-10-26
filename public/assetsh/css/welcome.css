@@ -225,23 +225,23 @@ p {
 }
 
 /* footer section */
-footer.footer_section {
+.footer_section {
   background: #161616;
 }
-footer.footer_section h3 {
+.footer_section h3 {
   color: #f7f7f7;
   margin-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 24px;
 }
-footer.footer_section p,
-footer.footer_section p span {
+.footer_section p,
+.footer_section p span {
   color: #a4a4a4;
   margin-bottom: 5px;
   font-size: 18px;
 }
-footer.footer_section p span a {
+.footer_section p span a {
   color: #ea9c00;
 }
 .whatsapp a {
@@ -256,7 +256,7 @@ footer.footer_section p span a {
   border-radius: 2px;
   margin-bottom: 30px;
 }
-footer.footer_section button {
+.footer_section button {
   padding: 10px 15px;
   outline: none;
   border: none;

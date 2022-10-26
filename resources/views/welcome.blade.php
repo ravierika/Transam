@@ -161,7 +161,7 @@
     </section>
 
     <!-- footer -->
-    <footer class="footer_section py-4">
+    <div class="footer_section py-4">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 footer_toggle_content">
@@ -271,19 +271,63 @@
             />
           </div>
         </div>
-        <div
-          class=" text-center mt-5 copyright"
-        >
-          <p>Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Terms of useUser Agreement</a></li>
-            <li><a href="#">Pricing Policy</a></li>
-          </ul>
-        </div>
+
       </div>
-    </footer>
+    </div>
+    <footer>
+
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h3>Start using EBMV today.</h3>
+              <div class="d-flex position-relative">
+                <form style="width:100%" action="">
+                  <input required class="subscriberBox" type="email" placeholder="Your Email">
+                  <button type="submit" class="send_button"><i class="fa fa-paper-plane"></i></button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+              <img src="assetsh/img/welcome/logo.png" alt="">
+            </div>
+          </div>
+          <div class="row bottom_part">
+            <div class="col-md-5">
+              <img src="assetsh/img/welcome/logo.png" alt="logo">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="/services">Service</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/visa">Visa</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul>
+                <li><a href="/terms">Teams and Conditions</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/cookie">Cookie Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="mailto:travelfreeby@gmail.com">travelfreeby@gmail.com</a></li>
+                <li class="social">
+                  <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                  <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr style="background: #fff;">
+      <div class="text-center  copyright">
+        <p class="mb-0">Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
+      </div>
+      </footer>
     <!-- external section -->
     <div id="chat"  class="fixed_message">
       <div class="chat_container">
