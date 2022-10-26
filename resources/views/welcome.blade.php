@@ -29,7 +29,7 @@
             class="nav-wrapper d-flex align-items-center justify-content-between"
           >
             <a href="index.html" class="brand-logo">
-              <img src="assetsh/img/welcome/logo.webp" alt="" />
+              <img src="assetsh/img/welcome_img/logo.webp" alt="" />
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a class="active" href="index.html">Home</a></li>
@@ -136,7 +136,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <img class="rounded" src="assetsh/img/welcome/right_img.webp" alt="" />
+            <img class="rounded" src="assetsh/img/welcome_img/right_img.webp" alt="" />
           </div>
         </div>
       </div>
@@ -266,7 +266,7 @@
           <div class="col-md-6">
             <img
               class="rounded"
-              src="assetsh/img/welcome/footer.webp"
+              src="assetsh/img/welcome_img/footer.webp"
               alt="footer image"
             />
           </div>
@@ -288,12 +288,12 @@
               </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <img src="assetsh/img/welcome/logo.png" alt="">
+              <img src="assetsh/img/welcome_img/logo.png" alt="">
             </div>
           </div>
           <div class="row bottom_part">
             <div class="col-md-5">
-              <img src="assetsh/img/welcome/logo.png" alt="logo">
+              <img src="assetsh/img/welcome_img/logo.png" alt="logo">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
             </div>
             <div class="col-md-2">
