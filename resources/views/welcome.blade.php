@@ -235,11 +235,11 @@
                     </svg></svg></span>
                 Message us on WhatsApp</a>
             </p>
-            <button class="toggle_btn" onclick="activeClassToggle('second_footer_view','first_footer_view')">FILL UP TO IMPROVISE MODERN BUSINESS TRAVEL</button>
+            <button class="toggle_btn" onclick="activeClassToggle('second_footer_view','first_footer_view')">CLICK HERE IMPROVISE MODERN BUSINESS TRAVEL</button>
 
             </div>
             <div id="second_footer_view" class="second_footer_view active mb-3">
-              <h2>Fill up to improvise modern business travel</h2>
+              <h2>Click here to improvise modern business travel</h2>
               <form action="">
                 <div class="form-group">
                   <input type="text" class="single_form" placeholder="Name*">
