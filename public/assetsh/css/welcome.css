@@ -340,6 +340,74 @@ footer.footer_section button {
   left: -9999px;
   display: none;
 }
+/* customize new footer */
+
+footer{
+  background:#111113;
+  padding: 20px 0;
+  /* margin-bottom: 20px; */
+}
+footer h3{
+  font-family: 'Montserrat', sans-serif;
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+footer input.subscriberBox{
+  width: 90%;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #eee;
+  color: #636464;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px;
+  padding-right: 50px;
+}
+.send_button{
+  width: 10%;
+  background-color: transparent;
+  position: absolute;
+  right: 50px;
+  top:-5px;
+  border: none;
+  outline: none;
+}
+.send_button i{
+  color:#ea9c00;
+}
+footer .bottom_part img{
+  max-width:100%;
+  width:250px;
+}
+footer .bottom_part p{
+  color:#8f9091;
+  font-size: 15px;
+}
+footer .bottom_part ul li{
+  display: block;
+  margin-bottom: 5px;
+}
+footer .bottom_part ul li a{
+  display: block;
+  color: #707174;
+  font-family: 'Montserrat', sans-serif;
+  /* padding: 5px; */
+  text-decoration: none;
+}
+footer .bottom_part ul li.social{
+  display:flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  gap:  10px;
+}
+footer .bottom_part ul li a i{
+  color: #616163;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
 /* head title */
 .content {
   margin-top: 120px;
