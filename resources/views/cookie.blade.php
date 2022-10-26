@@ -141,19 +141,45 @@
 
         <!-- footer section start -->
         <footer>
-          <div
-          class=" text-center mt-5 copyright"
-        >
-          <p>Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
-          <ul>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="cookie.html">Cookie Policy</a></li>
-            <li><a href="userAggrement.html">User Agreement</a></li>
-            <li><a href="privacy.html">Pricing Policy</a></li>
-          </ul>
-        </div>
 
-        </footer>
+            <div class="container">
+              <div class="row bottom_part">
+                <div class="col-md-5">
+                  <img src="assetsh/img/welcome_img/logo.png" alt="logo">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
+                </div>
+                <div class="col-md-2">
+                  <ul>
+                    <li><a href="/services">Service</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/visa">Visa</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3">
+                  <ul>
+                    <li><a href="/terms">Teams and Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/cookie">Cookie Policy</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-2">
+                  <ul>
+                    <li><a href="mailto:travelfreeby@gmail.com">travelfreeby@gmail.com</a></li>
+                    <li class="social">
+                      <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                      <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                      <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                      <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr style="background: #fff;">
+          <div class="text-center  copyright">
+            <p class="mb-0">Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
+          </div>
+          </footer>
         <script src="assetsh/js/welcome.js"></script>
   </body>
   </html>

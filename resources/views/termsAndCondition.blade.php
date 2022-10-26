@@ -40,6 +40,7 @@
           </div>
         </div>
       </nav>
+    </header>
         <!-- hero section end -->
 
         <div class="container content">
@@ -167,27 +168,12 @@
 
         <!-- footer section start -->
 
-      </header>
       <footer>
 
         <div class="container">
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <h3>Start using EBMV today.</h3>
-              <div class="d-flex position-relative">
-                <form style="width:100%" action="">
-                  <input required class="subscriberBox" type="email" placeholder="Your Email">
-                  <button type="submit" class="send_button"><i class="fa fa-paper-plane"></i></button>
-                </form>
-              </div>
-            </div>
-            <div class="col-md-6 d-none d-md-block">
-              <img src="./assets/images/logo.png" alt="">
-            </div>
-          </div>
           <div class="row bottom_part">
             <div class="col-md-5">
-              <img src="./assets/images/logo.png" alt="logo">
+              <img src="assetsh/img/welcome_img/logo.png" alt="logo">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
             </div>
             <div class="col-md-2">

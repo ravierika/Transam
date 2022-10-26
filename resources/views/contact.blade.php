@@ -22,24 +22,26 @@
   </head>
   <body>
     <header>
-      <nav class="fixed_menu">
-        <div class="container">
-          <div
-            class="nav-wrapper d-flex align-items-center justify-content-between"
-          >
-            <a href="index.html" class="brand-logo">
-              <img src="./assets/images/logo.webp" alt="" />
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a class="active" href="/contact">Contact</a></li>
-            </ul>
-            <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
+        <nav class="fixed_menu">
+            <div class="container">
+              <div
+                class="nav-wrapper d-flex align-items-center justify-content-between"
+              >
+                <a href="index.html" class="brand-logo">
+                  <img src="./assets/images/logo.webp" alt="" />
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a class="active" href="index.html">Home</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li class=""><a href="/login">Log In</a></li>
+                  <li class=""><a href="/register">Sign Up</a></li>
+                </ul>
+                <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+      </header>
 
     <!-- travel section -->
     <section class="content mb-5">
@@ -140,19 +142,46 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14001.011120287369!2d76.95720127897992!3d28.682084118370252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0f292e529ee1%3A0x4e037bd923885447!2sTikri%20Kalan%2C%20Bahadurgarh%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sbd!4v1650977905683!5m2!1sen!2sbd" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <footer class="footer_section py-4">
-      <div class="container">
-        <div class="copyright text-center">
-          <p>Copyright © 2022 Travel Freeby - All Rights Reserved.</p>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Terms of use</a></li>
-            <li><a href="#">User Agreement</a></li>
-          </ul>
+    <footer>
+
+        <div class="container">
+          <div class="row bottom_part">
+            <div class="col-md-5">
+              <img src="assetsh/img/welcome_img/logo.png" alt="logo">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="/services">Service</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/visa">Visa</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul>
+                <li><a href="/terms">Teams and Conditions</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/cookie">Cookie Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="mailto:travelfreeby@gmail.com">travelfreeby@gmail.com</a></li>
+                <li class="social">
+                  <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                  <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <hr style="background: #fff;">
+      <div class="text-center  copyright">
+        <p class="mb-0">Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
       </div>
-    </footer>
+      </footer>
      <!-- external section -->
      <div id="chat"  class="fixed_message">
       <div class="chat_container">
