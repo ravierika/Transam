@@ -662,6 +662,11 @@ footer .bottom_part ul li a i{
     outline: none;
     border: none;
     transition:.3s;
+    /* background: yellow; */
+    padding: 9px;
+    top: -3px;
+    position: relative;
+    left: -5px;
 }
 /* .toggle_btn:hover{
     background-color:#a06b00;
@@ -682,14 +687,44 @@ footer .bottom_part ul li a i{
 .toggle_link{
     background-color:#ea9c00;
     border-radius: 5px;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
 }
+/* .toggle_link:hover .toggle_menu{
+    top: 50px;
+} */
+
+/* .toggle_menu li{
+    position: relative;
+    z-index: 2;
+    display: block
+}
+.toggle_menu li::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background:red;
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+} */
 
 .nav-wrapper ul li.toggle_link a.active,.nav-wrapper ul li.toggle_link i{
     color:#fff;
 }
 .nav-wrapper ul li.toggle_link a.active{
-    border-right: 1px solid #fff;
+    border:none;
+    /* border-right: 1px solid #fff; */
+    position: relative;
+}
+.nav-wrapper ul li.toggle_link a.active::after{
+    content: '';
+    border-right:1px solid #fff ;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    position: absolute;
+    top: 2px;
 }
 
 

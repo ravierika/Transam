@@ -15,12 +15,32 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/4b5d72e539.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/4b5d72e539.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="assetsh/css/welcome_css_.css" />
+    <script src="https://kit.fontawesome.com/4b5d72e539.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4b5d72e539.js" crossorigin="anonymous"></script>
+    <link href="{{URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <link href="{{URL::asset('assets/plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet" />
+    <link href="{{URL::asset('assets/plugins/fileupload/css/fileupload.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/charts-c3/plugin.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/dropzone/dropzone.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}"/>
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/select2/select2.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('assets/plugins/ijabocrop/ijaboCropTool.min.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('dist/image-uploader.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/main.css')}}">
+<link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
+
+<link rel="stylesheet" href="{{URL::asset('assets/css/color_skins.css')}}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        select{
+            padding: 10px !important;
+        }
+    </style>
   </head>
-  <body>
+  <body style="background-color:#fff">
     <header>
         <nav class="fixed_menu">
             <div class="container">
@@ -51,103 +71,196 @@
       </header>
 
     <!-- travel section -->
-    <section class="content mb-5">
-        <div class="head_title">
-            <h2>FREQUENTLY ASKED QUESTIONS</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card_view text-center">
-                        <p class="title">Why should we use a travel company?</p>
-                        <p class="text">Even in the age of online booking, travel companies are a great source of information and discounts. We help you Create spend limits and restrict class of travel for greater budget control, Access corporate deals on flights, hotels and car hire (international and domestic).</p>
+
+
+    <div class="container" style="margin-top:75px">
+        <div class="card">
+            <div class="body">
+                <form class="form-horizontal" method="Post"  files="true">
+                    <div  class="header px-0">
+                        <h2><strong>Lead</strong> Flight Information <small></small> </h2>
+
                     </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card_view border_both  text-center">
-                        <p class="title">Will I pay more if I book through a travel company?</p>
-                        <p class="text">Our fees are transparent. In many cases, you save more than you spend. We can work within your budget, and we always focus on making sure that you get a solid value in return for our fees. </p>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label class="d-flex align-items-center" for=""><span class="red">*</span> <span>Trip Type</span></label>
+                            <div class="d-flex align-items-center">
+                                <div class="mr-2 d-flex align-items-center"><input value="oneWay" onchange="checkTripType('travel1','oneWay','return')" class="mx-1" type="radio" name="travel" id="travel1"><label for="travel1" class="mb-0">One Way</label></div>
+                                <div class=" d-flex align-items-center"><input value="roundTrip" onchange="checkTripType('travel2','oneWay','return')" checked="checked" class="mx-1"  type="radio" name="travel" id="travel2"><label for="travel2" class="mb-0">Round Trip</label></div>
+                            </div>
+                        </div>
+
                     </div>
+
+                <div class="row clearfix">
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label><span class="red ml-3">*</span><span>Enter Your Name</span></label>
+                            <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Your Name">
+
+                            @error('Client_Name')
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="User"><span class="red ml-3">*</span> <span>Enter Your Email</span></label>
+                            <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Your Email">
+
+                            @error('Client_Name')
+                            <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="from"><span class="red ml-3">*</span> <span>From</span></label>
+                            <input onchange="checkCity()" id="from" type="text" name="from" class="form-control @error('from') is-invalid @enderror" placeholder="Enter Origin" required autocomplete="from" value="{{ old('from') }}">
+                            @error('from')
+                            <span class="invalid-feedback" role="alert" id="fromError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="to"><span class="red ml-3">*</span> <span>To</span></label>
+                            <input onchange="checkCity()" id="to" type="text" name="to" class="form-control @error('to') is-invalid @enderror" placeholder="Enter Destination" required autocomplete="to" value="{{ old('to') }}">
+                            @error('to')
+                            <span class="invalid-feedback" role="alert" id="toError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Depart Date </span></label>
+                            <input id="depart" type="date" name="depart" class="form-control @error('depart') is-invalid @enderror" placeholder="depart" required autocomplete="depart" value="{{ old('depart') }}">
+                            @error('depart')
+                            <span class="invalid-feedback" role="alert" id="departError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Return Date </span></label>
+                            <input id="return" type="date" name="return" class="form-control @error('return') is-invalid @enderror" placeholder="return" required autocomplete="return" value="{{ old('return') }}">
+                            @error('return')
+                            <span class="invalid-feedback" role="alert" id="returnError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Adults</span></label>
+                            <input id="adult" type="number" name="adult" class="form-control @error('adult') is-invalid @enderror" placeholder="Number of Adults" required autocomplete="adult" value="{{ old('adult') }}">
+                            @error('adult')
+                            <span class="invalid-feedback" role="alert" id="adultError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Kids</span></label>
+                            <input id="kids" type="number" name="kids" value="0" class="form-control @error('kids') is-invalid @enderror" placeholder="Number of Kids" required autocomplete="kids" value="{{ old('kids') }}">
+                            @error('kids')
+                            <span class="invalid-feedback" role="alert" id="kidsError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span class="red ml-3">*</span> <span>Number of Infants</span></label>
+                            <input id="infant" type="number" name="infant" value="0" class="form-control @error('infant') is-invalid @enderror" placeholder="Number of Infants" required autocomplete="infant" value="{{ old('infant') }}">
+                            @error('infant')
+                            <span class="invalid-feedback" role="alert" id="infantError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="d-flex align-items-center" for="class"><span class="ml-3"></span> <span>Flight Class</span></label>
+                        <select name="class" class="form-control show-tick" value="{{ old('class') }}">
+                            <option value="Economy">Economy</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="d-flex align-items-center" for="class"><span class="ml-3"></span> <span>Preference</span></label>
+                        <select name="preference" class="form-control show-tick" value="{{ old('class') }}">
+                            <option value="Economy">Direct</option>
+                            <option value="Premium">Via</option>
+                            <option value="Business">Both</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="depart"><span style="opacity:0" class="red ml-3">*</span> <span>Phone Number</span></label>
+                            <input id="adult" type="text" name="adult" class="form-control @error('adult') is-invalid @enderror" placeholder="Phone Number" required autocomplete="adult" value="{{ old('adult') }}">
+                            @error('adult')
+                            <span class="invalid-feedback" role="alert" id="adultError">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="d-flex align-items-center" for="remarks"> <span class="red ml-3" style="opacity: 0">*</span><span>Remarks</span></label>
+                            <textarea id="direct" type="text" name="direct"class="form-control" placeholder="Remarks"  value="{{ old('direct') }}"></textarea>
+                        </div>
+                    </div>
+
+                    </div>
+
+
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card_view text-center">
-                        <p class="title">Do you book group travel?</p>
-                        <p class="text">Yes! Do you have an upcoming conference for your business or a student trip? We can handle the details and ensure that you have access to group seating, entrances, and discounts.</p>
+
+                    <div class="col-sm-12 mt-4">
+                        <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                    <a href="{{route('users.index')}}" class="btn btn-primary btn-round">Cancel</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="contact py-5">
-        <div class="container text-center">
-            <h2 class="text-uppercase mb-5">CONTACT Us</h2>
-            <h3>We'd love to hear from you!</h3>
-            <p> Unit - 224, JMD Megapolis, Sohna Road, Sec - 48 Gurgaon  Haryana, India 122001</p>
-            <p> Phone:- (0124) 4384563 Mobile - +91-9999360524  Email - <a href="mailto:info@travelfreeby.com">info@travelfreeby.com</a>  </p>
-            <p class="whatsapp mt-4">
-                <a style="display:inline-block;" href="https://wa.me/919999360524"
-                  ><span
-                    data-ux="Element"
-                    class="x-el x-el-span c1-d0 c1-d1 c1-4p c1-d2 c1-63 c1-d3 c1-d4 c1-d5 c1-d6 c1-ci c1-c"
-                    ><svg
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      width="24px"
-                      height="24px"
-                      data-ux="Icon"
-                      class="x-el x-el-svg c1-34 c1-1e c1-2c c1-ci c1-c"
-                    >
-                      <svg
-                      viewBox="0 0 496 497">
-                        <defs>
-                          <linearGradient
-                            id="a"
-                            x1="247.32"
-                            x2="247.32"
-                            y1="446.09"
-                            y2="39.9"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop offset="0" stop-color="#20b038"></stop>
-                            <stop offset="1" stop-color="#60d66a"></stop>
-                          </linearGradient>
-                          <linearGradient
-                            id="b"
-                            x1="247.32"
-                            x2="247.32"
-                            y1="453.37"
-                            y2="32.61"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop offset="0" stop-color="#f9f9f9"></stop>
-                            <stop offset="1" stop-color="#fff"></stop>
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M37.88 453.37l29.59-108A208 208 0 0 1 39.63 241.1c0-115 93.6-208.49 208.56-208.49a208.57 208.57 0 0 1 208.57 208.66c-.05 115-93.62 208.49-208.57 208.49h-.08a208.41 208.41 0 0 1-99.67-25.38zm115.68-66.73l6.34 3.75a173.18 173.18 0 0 0 88.23 24.16h.06c95.55 0 173.31-77.75 173.35-173.3A173.34 173.34 0 0 0 248.26 67.83c-95.62 0-173.38 77.73-173.42 173.28a172.94 172.94 0 0 0 26.5 92.23l4.13 6.55L88 403.84z"
-                        ></path>
-                        <path
-                          fill="url(#a)"
-                          d="M45.13 446.09l28.57-104.3a200.82 200.82 0 0 1-26.88-100.62c0-111 90.36-201.27 201.34-201.27A201.35 201.35 0 0 1 449.5 241.32c0 111-90.37 201.28-201.33 201.28h-.09a201.31 201.31 0 0 1-96.21-24.49z"
-                        ></path>
-                        <path
-                          fill="url(#b)"
-                          d="M37.88 453.37l29.59-108A208 208 0 0 1 39.63 241.1c0-115 93.6-208.49 208.56-208.49a208.57 208.57 0 0 1 208.57 208.66c-.05 115-93.62 208.49-208.57 208.49h-.08a208.41 208.41 0 0 1-99.67-25.38zm115.68-66.73l6.34 3.75a173.18 173.18 0 0 0 88.23 24.16h.06c95.55 0 173.31-77.75 173.35-173.3A173.34 173.34 0 0 0 248.26 67.83c-95.62 0-173.38 77.73-173.42 173.28a172.94 172.94 0 0 0 26.5 92.23l4.13 6.55L88 403.84z"
-                        ></path>
-                        <path
-                          fill="#fff"
-                          d="M196.07 153.94c-3.91-8.68-8-8.85-11.73-9-3-.14-6.51-.13-10-.13a19.15 19.15 0 0 0-13.89 6.52c-4.78 5.22-18.24 17.82-18.24 43.46s18.67 50.42 21.28 53.9 36.05 57.77 89 78.66c44 17.36 53 13.91 62.53 13s30.83-12.61 35.18-24.78 4.34-22.59 3-24.77-4.78-3.48-10-6.08-30.83-15.22-35.61-16.95-8.25-2.61-11.73 2.61-13.45 16.94-16.5 20.42-6.08 3.92-11.29 1.31-22-8.11-41.9-25.86c-15.5-13.82-26-30.87-29-36.09s-.32-8 2.29-10.63c2.34-2.34 5.21-6.09 7.82-9.13s3.47-5.21 5.21-8.69.87-6.52-.44-9.13-11.35-28.34-15.98-38.64z"></path>
-                      </svg></svg></span>
-                  Message us on WhatsApp</a>
-              </p>
-              <p>JMD Megapolis, Sohna Road, Sector 48, Gurugram, Haryana, India</p>
-        </div>
-    </section>
 
-    <section class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14001.011120287369!2d76.95720127897992!3d28.682084118370252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0f292e529ee1%3A0x4e037bd923885447!2sTikri%20Kalan%2C%20Bahadurgarh%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sbd!4v1650977905683!5m2!1sen!2sbd" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+
+
 
     <footer>
 
@@ -213,5 +326,7 @@
     </div>
 
     <script src="assetsh/js/welcome.js"></script>
+    <script src="{{URL::asset('assets/js/leads.js')}}"></script>
+    <script src="{{URL::asset('assets/js/custom.js')}}"></script>
   </body>
 </html>

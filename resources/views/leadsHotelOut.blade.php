@@ -40,22 +40,31 @@
     <header>
         <nav class="fixed_menu">
             <div class="container">
-                <div class="nav-wrapper d-flex align-items-center justify-content-between">
-                    <a href="index.html" class="brand-logo">
-                        <img src="assetsh/img/welcome_img/logo.webp" alt="" />
-                    </a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class=""><a href="/login">Log In</a></li>
-                        <li class=""><a href="/register">Sign Up</a></li>
+              <div
+                class="nav-wrapper d-flex align-items-center justify-content-between"
+              >
+                <a href="/" class="brand-logo">
+                  <img src="assetsh/img/welcome_img/logo.webp" alt="" />
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a  href="/">Home</a></li>
+                  <li class="position-relative toggle_link"><a class="active d-inline-block"href="/services">Services </a>
+                    <button onclick="menuToggle('toggle_menu')" class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                    <ul id="toggle_menu" class="toggle_menu position-absolute">
+                        <li><a href="/user/leads/flights/create">flights</a></li>
+                        <li><a href="/user/leads/hotels/create">hotels</a></li>
+                        <li><a href="/user/leads/packages/create">packages</a></li>
                     </ul>
-                    <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
-                </div>
+                    </li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li class=""><a href="/login">Log In</a></li>
+                  <li class=""><a href="/register">Sign Up</a></li>
+                </ul>
+                <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
+              </div>
             </div>
-        </nav>
-    </header>
+          </nav>
+      </header>
 
     <!-- travel section -->
 
@@ -70,7 +79,32 @@
 
                     </div>
 
-                    <div class=" row" id="hotel">
+                    <div class=" row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label><span class="red ml-3">*</span><span>Enter Your Name</span></label>
+                                <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Your Name">
+
+                                @error('Client_Name')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="User"><span class="red ml-3">*</span> <span>Enter Your Email</span></label>
+                                <input id="cust" name="Client_Name" class="form-control @error('Client_Name') is-invalid @enderror " value="{{ old('Client_Name') }}" required autocomplete="Client_Name" placeholder="Enter Your Email">
+
+                                @error('Client_Name')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="d-flex align-items-center" for="city"><span class="red ml-3">*</span> <span>City / Hotel Name</span></label>
@@ -161,12 +195,14 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label class="d-flex align-items-center" for="bed"><span class="ml-3"></span> <span>Bed Configuration</span></label>
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="bed"><span class="ml-3"></span> <span>Bed Configuration</span></label>
                             <select name="bed" class="form-control show-tick" value="{{ old('bed') }}">
                                 <option value="">-- Bed Configuration --</option>
                                 <option value="double">Double</option>
                                 <option value="twin">Twin</option>
                             </select>
+                            </div>
                         </div>
 
                         <div class="col-sm-6">
@@ -182,12 +218,15 @@
 
 
                         <div class="col-sm-6">
-                            <label class="d-flex align-items-center" for="class"><span class="red ml-3">*</span> <span>Lead Status</span></label>
-                            <select name="status" class="form-control show-tick" value="{{ old('class') }}">
-                                <option value="Open">Open</option>
-                                <option value="Converted">Converted</option>
-                                <option value="Lost">Lost</option>
-                            </select>
+                            <div class="form-group">
+                                <label class="d-flex align-items-center" for="depart"><span style="opacity:0" class="red ml-3">*</span> <span>Phone Number</span></label>
+                                <input id="adult" type="text" name="adult" class="form-control @error('adult') is-invalid @enderror" placeholder="Phone Number" required autocomplete="adult" value="{{ old('adult') }}">
+                                @error('adult')
+                                <span class="invalid-feedback" role="alert" id="adultError">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
                         </div>
 
 
