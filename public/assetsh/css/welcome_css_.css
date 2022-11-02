@@ -7,7 +7,7 @@
   margin: 0;
   box-sizing: border-box;
   color: rgb(27, 27, 27);
-  font-family: 'Archivo Black', sans-serif;
+  /* font-family: 'Archivo Black', sans-serif; */
 }
 ul {
   padding: 0;
@@ -287,12 +287,12 @@ p {
   font-size: 36px;
   font-family: 'Montserrat', sans-serif;
 }
-.form-group {
+/* .form-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.form-group input,.message_box{
+} */
+.message_box{
   color: rgb(171, 171, 171);
   background-color: rgb(0, 0, 0);
   font-size: 16px;
@@ -656,6 +656,73 @@ footer .bottom_part ul li a i{
   font-family: 'Montserrat';
   font-size: 20px;
 }
+
+.toggle_btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition:.3s;
+}
+/* .toggle_btn:hover{
+    background-color:#a06b00;
+} */
+.toggle_menu{
+    background-color:#fff;
+    /* background-color:red; */
+    box-shadow:0px 20px 37px -21px #6a6a6a;
+    border-radius: 0px 0px 5px 5px;
+    top:-500px;
+    opacity: 0;
+    transition:.3s
+}
+.toggle_menu.active{
+    opacity: 1;
+    top: 50px;
+}
+.toggle_link{
+    background-color:#ea9c00;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+.nav-wrapper ul li.toggle_link a.active,.nav-wrapper ul li.toggle_link i{
+    color:#fff;
+}
+.nav-wrapper ul li.toggle_link a.active{
+    border-right: 1px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* responsive css */
 
 @media (max-width: 767px) {

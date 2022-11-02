@@ -26,3 +26,6 @@ function chatToggle(id, id1){
     chatIcon.classList.add("fa-comment");
   }
 }
+
+
+

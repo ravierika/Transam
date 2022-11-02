@@ -21,24 +21,33 @@
   </head>
   <body>
     <header>
-      <nav class="fixed_menu">
-        <div class="container">
-          <div
-            class="nav-wrapper d-flex align-items-center justify-content-between"
-          >
-            <a href="index.html" class="brand-logo">
-              <img src="./assets/images/logo.webp" alt="" />
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="index.html">Home</a></li>
-              <li><a class="active" href="/services">Services</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-            <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
+        <nav class="fixed_menu">
+            <div class="container">
+              <div
+                class="nav-wrapper d-flex align-items-center justify-content-between"
+              >
+                <a href="/" class="brand-logo">
+                  <img src="assetsh/img/welcome_img/logo.webp" alt="" />
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a  href="/">Home</a></li>
+                  <li class="position-relative toggle_link"><a class="active d-inline-block"href="/services">Services </a>
+                    <button onclick="menuToggle('toggle_menu')" class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                    <ul id="toggle_menu" class="toggle_menu position-absolute">
+                        <li><a href="/user/leads/flights/create">flights</a></li>
+                        <li><a href="/user/leads/hotels/create">hotels</a></li>
+                        <li><a href="/user/leads/packages/create">packages</a></li>
+                    </ul>
+                    </li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li class=""><a href="/login">Log In</a></li>
+                  <li class=""><a href="/register">Sign Up</a></li>
+                </ul>
+                <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+      </header>
 
     <!-- travel section -->
     <section class="content mb-5">
@@ -127,7 +136,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-3 mb-4">
               <div class="card_view text-center">
-                <img src="./assets/images/user1.png" alt="">
+                <img src="assetsh/img/welcome_img/user1.png" alt="">
                 <div class="d-flex justify-content-center mb-3">
                   <svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg>
                 </div>
@@ -145,7 +154,7 @@ unbelievable prices :)"
             </div>
             <div class="col-md-3 mb-4">
               <div class="card_view  text-center">
-                <img src="./assets/images/user2.png" alt="">
+                <img src="assetsh/img/welcome_img/user2.png" alt="">
                 <div class="d-flex justify-content-center mb-3">
                   <svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating1-star-2"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="100%" stop-color="#FBCF1E"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating1-star-2)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating3-star-3"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="0%" stop-color="rgb(224,224,224)"></stop><stop offset="100%" stop-color="rgb(224,224,224)"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating3-star-3)"></path></svg><svg data-ux="SVG" viewBox="0 0 50 50" class="x-el x-el-svg c2-1 c2-2 c2-k c2-27 c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"><defs><linearGradient id="fillStyle-rating3-star-3"><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="0%" stop-color="#FBCF1E"></stop><stop offset="0%" stop-color="rgb(224,224,224)"></stop><stop offset="100%" stop-color="rgb(224,224,224)"></stop></linearGradient></defs><path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" fill="url(#fillStyle-rating3-star-3)"></path></svg>
                 </div>
@@ -166,19 +175,46 @@ God (Original) Gud"
       </div>
     </section>
 
-    <footer class="footer_section py-4">
-      <div class="container">
-        <div class="copyright text-center">
-          <p>Copyright © 2022 Travel Freeby - All Rights Reserved.</p>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Terms of use</a></li>
-            <li><a href="#">User Agreement</a></li>
-          </ul>
+    <footer>
+
+        <div class="container">
+          <div class="row bottom_part">
+            <div class="col-md-5">
+              <img src="assetsh/img/welcome_img/logo.png" alt="logo">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.</p>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="/services">Service</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/visa">Visa</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul>
+                <li><a href="/terms">Teams and Conditions</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/cookie">Cookie Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <ul>
+                <li><a href="mailto:travelfreeby@gmail.com">travelfreeby@gmail.com</a></li>
+                <li class="social">
+                  <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                  <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <hr style="background: #fff;">
+      <div class="text-center  copyright">
+        <p class="mb-0">Copyright © 2022 Travel Freeby - A Product of EBMV LLP - All Rights Reserved.</p>
       </div>
-    </footer>
+      </footer>
      <!-- external section -->
      <div id="chat"  class="fixed_message">
       <div class="chat_container">
