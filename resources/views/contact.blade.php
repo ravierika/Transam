@@ -27,13 +27,20 @@
               <div
                 class="nav-wrapper d-flex align-items-center justify-content-between"
               >
-                <a href="index.html" class="brand-logo">
-                  <img src="./assets/images/logo.webp" alt="" />
+                <a href="/" class="brand-logo">
+                  <img src="assetsh/img/welcome_img/logo.webp" alt="" />
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                  <li><a class="active" href="index.html">Home</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li><a  href="/">Home</a></li>
+                  <li class="position-relative toggle_link"><a class="active d-inline-block"href="/services">Services </a>
+                    <button onclick="menuToggle('toggle_menu')" class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                    <ul id="toggle_menu" class="toggle_menu position-absolute">
+                        <li><a href="/user/leads/flights/create">flights</a></li>
+                        <li><a href="/user/leads/hotels/create">hotels</a></li>
+                        <li><a href="/user/leads/packages/create">packages</a></li>
+                    </ul>
+                    </li>
+                  <li><a href="/contact">Contact</a></li>
                   <li class=""><a href="/login">Log In</a></li>
                   <li class=""><a href="/register">Sign Up</a></li>
                 </ul>
