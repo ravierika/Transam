@@ -23,25 +23,49 @@
   </head>
   <body>
     <header>
-      <nav class="fixed_menu">
-        <div class="container">
-          <div
-            class="nav-wrapper d-flex align-items-center justify-content-between"
-          >
-            <a href="index.html" class="brand-logo">
-              <img src="assetsh/img/welcome_img/logo.webp" alt="" />
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li class=""><a href="/login">Log In</a></li>
-              <li class=""><a href="/register">Sign Up</a></li>
-            </ul>
-            <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
-          </div>
-        </div>
-      </nav>
+        <nav class="fixed_menu">
+            <div class="container">
+              <div
+                class="nav-wrapper d-flex align-items-center justify-content-between"
+              >
+                <a href="/" class="brand-logo">
+                  <img src="assetsh/img/welcome_img/logo.webp" alt="" />
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a  href="/">Home</a></li>
+                  <li onclick="menuToggle('toggle_menu')"  class="position-relative toggle_link"><a class="active d-inline-block"href="javascript:void(0)">take free quetation </a>
+                    <button class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                    <ul id="toggle_menu" class="toggle_menu position-absolute">
+                        <li><a href="/user/leads/flights/create">flights</a></li>
+                        <li><a href="/user/leads/hotels/create">hotels</a></li>
+                        <li><a href="/user/leads/packages/create">packages</a></li>
+                    </ul>
+                    </li>
+
+                    <li onclick="menuToggle('toggle_menu_my_ques')" class="position-relative toggle_link"><a class="active d-inline-block" href="javascript:void(0)">my quetation </a>
+                        <button class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                        <ul id="toggle_menu_my_ques" class="toggle_menu position-absolute">
+                            <li><a href="/user/quetation/flights/create">flights</a></li>
+                            <li><a href="/user/quetation/hotels/create">hotels</a></li>
+                            <li><a href="/user/quetation/packages/create">packages</a></li>
+                        </ul>
+                        </li>
+                    <li onclick="menuToggle('toggle_menu_bookings')" class="position-relative toggle_link"><a class="active d-inline-block"href="javascript:void(0)">my bookings </a>
+                        <button class="toggle_btn d-inline-block"><i class="fa fa-caret-down"></i></button>
+                        <ul id="toggle_menu_bookings" class="toggle_menu position-absolute">
+                            <li><a href="/user/bookings/flights/create">flights</a></li>
+                            <li><a href="/user/bookings/hotels/create">hotels</a></li>
+                            <li><a href="/user/bookings/packages/create">packages</a></li>
+                        </ul>
+                        </li>
+                  <li class=""><a href="/login">Log In</a></li>
+                  <li class=""><a href="/register">Sign Up</a></li>
+                </ul>
+                <i onclick="menuToggle('nav-mobile')" class="fa fa-bars"></i>
+              </div>
+            </div>
+          </nav>
+      </header>
       <!-- hero section -->
       <section class="hero">
         <video
@@ -65,7 +89,6 @@
           </div>
         </div>
       </section>
-    </header>
     <!-- about section -->
 
     <section id="about" class="about_section mb-5">

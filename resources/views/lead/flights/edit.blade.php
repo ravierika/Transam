@@ -33,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Flight</strong> Lead<small></small> </h2>
+                        <h2><strong>Flight</strong> Lead </h2>
 
                     </div>
                     <div class="body">
@@ -43,7 +43,7 @@
                             <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                             <input type="hidden" name="userid">
 
-                            
+
 
                         <div class="row clearfix">
                             <div class="col-sm-6">

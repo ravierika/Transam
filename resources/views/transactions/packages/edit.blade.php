@@ -33,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Flight</strong> Information <small></small> </h2>
+                        <h2><strong>Flight</strong> Information  </h2>
 
                     </div>
                     <div class="body">
@@ -71,7 +71,7 @@
                             </div>
 
 
-                           
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="from"><span class="red ml-3">*</span> <span>From</span></label>
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="col-sm-6">
                                 <div class="form-group">

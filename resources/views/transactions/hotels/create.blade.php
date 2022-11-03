@@ -20,7 +20,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Hotel</strong> Information <small></small> </h2>
+                        <h2><strong>Hotel</strong> Information  </h2>
                     </div>
                     <div class="body">
                         <form class="form-horizontal" method="Post" action="{{route('users.store')}}" files="true">

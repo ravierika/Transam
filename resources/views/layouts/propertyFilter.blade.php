@@ -334,7 +334,7 @@
                <div class="area">
                 <div onclick="filterToggle('areaContent','icon4')" class="my-3 cursor-pointer">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h6 class="m-0">Area <small></small></h6>
+                        <h6 class="m-0">Area </h6>
                         <i id="icon4" class="fas fa-chevron-down"></i>
                     </div>
                 </div>

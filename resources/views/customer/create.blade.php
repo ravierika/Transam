@@ -33,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Clients</strong> Information <small></small> </h2>
+                        <h2><strong>Clients</strong> Information  </h2>
 
                     </div>
                     <div class="body">

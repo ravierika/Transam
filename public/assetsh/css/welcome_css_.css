@@ -14,6 +14,20 @@ ul {
   margin: 0;
   list-style: none;
 }
+.main_btn{
+    color: rgb(255, 255, 255);
+    background-color: rgb(234 156 0);
+    border: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
 .hero {
   position: relative;
 }
@@ -33,15 +47,15 @@ li {
   margin-bottom: 0;
 }
 .nav-wrapper ul li a {
-  text-decoration: none;
-  color: #1b1b1b;
-  display: block;
-  padding: 10px;
-  font-size: 18px;
-  padding-bottom: 3px;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+    text-decoration: none;
+    color: #ea9c00;
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    /* padding-bottom: 3px; */
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 .nav-wrapper ul li a.active {
   border-bottom: 1px solid #c7a768;
@@ -110,7 +124,7 @@ section.hero video {
   font-size: 24px;
 }
 .hero-content .text button {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   background-color: rgb(234 156 0);
   border: none;
   padding: 15px 30px;
@@ -218,7 +232,7 @@ p {
   border: 1px solid rgb(234 156 0);
   background-color: rgb(234 156 0);
   font-weight: 600;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -261,7 +275,7 @@ p {
   outline: none;
   border: none;
   background: rgb(234 156 0);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 700;
   font-size: 16px;
   border-radius: 2px;
@@ -292,12 +306,7 @@ p {
   justify-content: space-between;
   align-items: center;
 } */
-.message_box{
-  color: rgb(171, 171, 171);
-  background-color: rgb(0, 0, 0);
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-}
+
 .single_form {
   width: 48%;
   margin-bottom: 10px;
@@ -306,19 +315,23 @@ p {
 .message_box {
   padding: 10px;
   outline: none;
-  background: #000;
-  color: #fff;
-  border: none;
+  border: 1px solid #a4a4a4;
+  color: #6a6a6a;
+  width: 49%;
+  border-radius: 5px;
+
 }
 .message_box {
-  width: 100%;
+  width: 98.5%;
   height: 150px;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 .form_label label {
-  color: #a4a4a4;
+  color: #6a6a6a;
   cursor: pointer;
   margin-left: 5px;
   font-size: 18px;
@@ -683,6 +696,7 @@ footer .bottom_part ul li a i{
 .toggle_menu.active{
     opacity: 1;
     top: 50px;
+    width: 100%;
 }
 .toggle_link{
     background-color:#ea9c00;
@@ -693,21 +707,31 @@ footer .bottom_part ul li a i{
     top: 50px;
 } */
 
-/* .toggle_menu li{
+ .toggle_menu li{
     position: relative;
     z-index: 2;
-    display: block
+    display: block;
+    margin-bottom: 5px;
+}
+.toggle_menu li:last-child{
+    margin-bottom: 0;
+
 }
 .toggle_menu li::after{
     content: "";
     position: absolute;
     z-index: -1;
-    background:red;
-    width: 100%;
+    background:rgb(193 193 193 / 64%);
+    width: 0%;
     height:100%;
     top:0;
     left:0;
-} */
+    border-radius: 5px;
+    transition:.5s;
+}
+.toggle_menu li:hover:after{
+    width: 100%
+}
 
 .nav-wrapper ul li.toggle_link a.active,.nav-wrapper ul li.toggle_link i{
     color:#fff;
@@ -724,12 +748,38 @@ footer .bottom_part ul li a i{
     width: 100%;
     right: 0;
     position: absolute;
-    top: 2px;
+    top: 50%;
+    transform: translateY(-50%)
 }
 
-
-
-
+.heading_text{
+    font-size:20px;
+    color: #5e5b5e;
+}
+.heading_text strong{
+   color: #ea9c00;
+}
+.search_form{
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0px 1px 20px 2px #e7e7e7;
+    /* box-shadow: inset 0px 1px 20px 2px #e7e7e7; */
+    margin-bottom: 50px;
+    padding: 20px;
+    /* background:#333; */
+    border-radius: 5px;
+}
+.search_form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1.5px solid #d2d2d2;
+    outline:none
+}
+.search_form label{
+    color: #5e5b5e;
+}
 
 
 

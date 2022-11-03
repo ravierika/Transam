@@ -10,7 +10,7 @@
                 <h2>Add Agent
                 <small>Welcome to {{$compn}}</small>
                 </h2>
-            </div>            
+            </div>
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-md-down">
                     <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#fff">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
@@ -33,8 +33,8 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Personal</strong> Information <small></small> </h2>
-                        
+                        <h2><strong>Personal</strong> Information  </h2>
+
                     </div>
                     <div class="body">
                         <form class="form-horizontal" method="Post" action="{{route('users.store')}}" files="true">
@@ -51,10 +51,10 @@
                                     <span class="invalid-feedback" role="alert" id="nameError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror                                  
+                                    @enderror
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="mobile"><span class="red ml-3">*</span> <span>Phone</span></label>
@@ -63,7 +63,7 @@
                                     <span class="invalid-feedback" role="alert" id="mobileError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror   
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -74,10 +74,10 @@
                                     <span class="invalid-feedback" role="alert" id="emailError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror                                   
+                                    @enderror
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6">
                                 <label class="d-flex align-items-center" for="gender"><span class="ml-3"></span> <span>Gender</span></label>
                                 <select name="gender" class="form-control show-tick" value="{{ old('gender') }}">
@@ -86,7 +86,7 @@
                                     <option value="Female">Female</option>
                                 </select>
                             </div>
-                            
+
                         </div>
                         <h6 class="mt-4">Account Information</h6>
                         <div class="row clearfix">
@@ -109,9 +109,9 @@
                                     <span class="invalid-feedback" role="alert" id="role_idlError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror   
+                                @enderror
                             </div>
-                        
+
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <label class="d-flex align-items-center" for="password"><span class="red ml-3">*</span> <span>Password</span></label>
@@ -120,7 +120,7 @@
                                     <span class="invalid-feedback" role="alert" id="emailError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror                                   
+                                    @enderror
                                 </div>
                             </div>
 
@@ -132,11 +132,11 @@
                                     <span class="invalid-feedback" role="alert" id="emailError">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror                                   
+                                    @enderror
                                 </div>
                             </div>
-                            
-                        
+
+
                             <div class="col-sm-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-round">Submit</button>
                             <a href="{{route('users.index')}}" class="btn btn-primary btn-round">Cancel</a>
